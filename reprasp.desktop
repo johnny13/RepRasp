@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=QuadPi
+Comment=3D Printer
+Exec=/home/pi/QuadPi/start.sh
+Icon=/home/pi/Printrun/pronsole.ico
+Terminal=false
+Type=Application
+Categories=Application;Development;
