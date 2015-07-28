@@ -1,5 +1,7 @@
 #RepRasp Repository
 
+![promo image](https://raw.githubusercontent.com/johnny13/RepRasp/master/assets/screenshots/1.png)
+
 This is the main repository for RepRasp. A Touch Screen UI for 3D printers. It is a small screen ui for Octoprint. It uses nodejs to server the content. GruntJS Sass and Jade are all used in the build environment. If you have a RaspberryPi and a touchscreen then this is what you want!
 
 The Repo is broken into a number of major sections.
@@ -44,6 +46,7 @@ Then finally you can clone the RepRasp repository and get started.
   
 Once all of those commands are finished you should have a repository stuffed with a bunch of node modules. At this point you still need to manually set the server details in the **files/defaults.json** and from there on out all you need to do is serve the HTML files to a web browser.
 
+![promo image](https://raw.githubusercontent.com/johnny13/RepRasp/master/assets/screenshots/2.png)
 
 #### production vs dev
 
