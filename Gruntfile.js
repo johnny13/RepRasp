@@ -187,12 +187,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
-	
-  /**
-   * Load Grunt plugins.
-   * call these from the command line, or just grunt for default.
-   */
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
   
   grunt.registerTask('default', ['reset','connect']);
   
