@@ -1,30 +1,54 @@
 #RepRasp Repository
 
-This is the main repository for RepRasp. A Touch Screen UI for 3D printers. ApePubSub is an alternative event driven pub/sub framework to the official [APE_JSF](https://github.com/APE-Project/APE_JSF) for the [APE Server](https://github.com/APE-Project/APE_Server). It is written in plain javascript.
+This is the main repository for RepRasp. A Touch Screen UI for 3D printers. It is a small screen ui for Octoprint. It uses nodejs to server the content. GruntJS Sass and Jade are all used in the build environment. If you have a RaspberryPi and a touchscreen then this is what you want!
 
 The Repo is broken into a number of major sections.
 
-## App Areas
+### App Areas
 
-1. /app/ - Web application
-2. /libraries/ - Li3 libraries
-3. /mobile/ - Mbile App
-4. /mumford/ - admin area
-5. /aws/ - Amazon Web Services
-6. /comments/ - Commentics Comments
-6. /reviews/ - Commentics Reviews
+1. /assets/ - support files. default config. copied over to webroot on build.
+2. /commands/ - Startup script. Touch Screen Config. Desktop Icon Shortcut.
+3. /jade/ - Page Templates
+4. /www/ - website directory
+5. /www/webroot/ - webroot for app js/css/imgs
 
-### System Requirements
-In order to run the app you will need a basic setup. All Database(s) are hosted and do not need to be installed.
+**Dont Forget** /assets/files/defaults.json has to be manually configured.
 
-    Unix
-    Apache 2.4 (or similiar webserver)
-    PHP 5.5+
-    PHP Modules [ postgre, mysql, cli ]
-    Composer
-    APE
+
+
+## Modify OctoPi / OctoPrint
+If you already have a working OctoPrint setup, or a standard OctoPi install, this process will simple. If you do not already have OctoPi running in some fashion, you will need to get that setup first. Otherwise we are simply going to install some javascript files to take advantage of the REST API that is already present.
+
+Assuming you are on raspian debian or such arm distro [raspberry-pi-nodejs](http://weworkweplay.com/play/raspberry-pi-nodejs/). 
+
+Basically to install nodejs and node package manager (npm) on raspian  
+  
+    wget http://weworkweplay.com/play/raspberry-pi-nodejs/
+    apt-get install nodejs nodejs-legacy npm 
+    npm config set registry http://registry.npmjs.org/
+    npm config set strict-ssl false
   
 
-### AJAX PUSH ENGINE [ APE ]
-You will need to install the APE Server and the modified ApePubSub Framework.
+Now that your npm is installed and configured you should be able to test it out by install the GruntJS command line package.
+Then finally you can clone the RepRasp repository and get started.
+
+    npm install -g grunt-cli
+    git clone https://github.com/johnny13/RepRasp
+    cd RepRasp
+    npm install
+    nano /assets/files/defaults.json //put in your api key
+  
+Once all of those commands are finished you should have a repository stuffed with a bunch of node modules. At this point you still need to manually set the server details in the **files/defaults.json** and from there on out all you need to do is serve the HTML files to a web browser.
+
+
+
+## GruntJS Commands
+
+If you would like to customize the UI you will need to run the **grunt dev** command. This will provide a live reload for your workspace. For the webserver, you can run **grunt server** command. If you are debugging / building, you can simply use Apache or nginx or whatever is on your dev machine. 
+
+You will need to enable octoprint's cross-origin-resouce-sharing **CORS** API option [octoprint content-type](http://docs.octoprint.org/en/master/api/general.html#content-type) on OctoPrint if you are developing on a machine other than the local raspberry the octoprint server is running on.
+
+    grunt dev // live reload. edit sass and jade and have fun
+    grunt server // run a simple web server. servers content from /www
+    grunt reset // resets repo and rebuilds everything
 

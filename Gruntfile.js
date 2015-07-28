@@ -71,7 +71,7 @@ module.exports = function (grunt) {
         banner: '<%= pkg.name %>-<%= pkg.version %>',
       },
       files: {
-          'dist/css/<%= pkg.name %>.min.css': ['assets/stylesheets/hui_built.css']
+          'webroot/css/<%= pkg.name %>.min.css': ['assets/stylesheets/hui_built.css']
       }
       },
     },
