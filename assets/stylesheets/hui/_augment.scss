@@ -4,6 +4,7 @@ html, body {
 
 body {
   padding: 10px 0 0 0;
+  overflow-x: hidden;
 }
 
 .navbar-toggle {
@@ -75,7 +76,7 @@ body {
 .action-button {
   position: fixed;
   right:10px;
-  bottom: 10px;
+  bottom: -5px;
   display: block;
   z-index: 9999;
 }
@@ -135,6 +136,16 @@ body {
 }
 
 @media (max-width: 768px){
+  .small-pf-r {
+    padding-right:2px;
+  }
+  .small-pf-l {
+    padding-left:2px;
+  }
+  .small-pf {
+    padding-left:0px;
+    padding-right:6px;
+  }
   body {
     padding-top: 10px;
     padding-bottom: 20px;

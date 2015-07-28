@@ -20,22 +20,22 @@ html
               i.fa.fa-home.fa-1
               br
               | Z
-          .push(style='height:10px;')
+          .push(style='height:20px;')
           .btn-group.btn-group-justified
-            a.btn.btn-success.col-sm-4.plus_x(href='#')
-              i.fa.fa-plus.fa-1
-            a.btn.btn-success.col-sm-4.plus_y(href='#')
-              i.fa.fa-plus.fa-1
-            a.btn.btn-success.col-sm-4.plus_z(href='#')
-              i.fa.fa-plus.fa-1
+            a.btn.btn-success.btn-lg.col-sm-4.plus_x(href='#')
+              i.fa.fa-plus.fa-2
+            a.btn.btn-success.btn-lg.col-sm-4.plus_y(href='#')
+              i.fa.fa-plus.fa-2
+            a.btn.btn-success.btn-lg.col-sm-4.plus_z(href='#')
+              i.fa.fa-plus.fa-2
           .btn-group.btn-group-justified
-            a.btn.btn-danger.col-sm-4.minus_x(href='#')
-              i.fa.fa-minus.fa-1
-            a.btn.btn-danger.ol-sm-4.minus_y(href='#')
-              i.fa.fa-minus.fa-1
-            a.btn.btn-danger.col-sm-4.minus_z(href='#')
-              i.fa.fa-minus.fa-1
-          .push(style='height:10px;')
+            a.btn.btn-danger.btn-lg.col-sm-4.minus_x(href='#')
+              i.fa.fa-minus.fa-2
+            a.btn.btn-danger.btn-lg.ol-sm-4.minus_y(href='#')
+              i.fa.fa-minus.fa-2
+            a.btn.btn-danger.btn-lg.col-sm-4.minus_z(href='#')
+              i.fa.fa-minus.fa-2
+          .push(style='height:20px;')
           .btn-group.btn-group-justified.measured_amount
             a.btn.btn-primary.btn-xs.col-sm-3(href='#', data-amount='0.1')
               | 0.1
@@ -45,30 +45,41 @@ html
               | 10
             a.btn.btn-primary.btn-xs.col-sm-3(href='#', data-amount='100')
               | 100
-        .col-sm-4.col-xs-5
-          select#tool_select.form-control.input-sm
-            option(value='') Hotend
-          .push(style='height:10px;')
-          
-          .input-group
-            input.form-control.input-sm.text-right(type='text', placeholder='5')
-            span.input-group-addon mm
-          
-          .push(style='height:10px;')
-          
-          a.btn.btn-default.btn-sm.btn-block(href='#')
-            i.fa.fa-filter
-            |  Extrude
-            
-          .push(style='height:16px;')
-          
-          .btn-group.btn-group-justified
-            a.btn.btn-info.btn-sm.col-sm-3.motor_toggle.top-spin(href='#')
-              i.fa.fa-cog
-              |    Motor
-            a.btn.btn-success.btn-sm.col-sm-3.fans_toggle.top-spin(href='#')
-              i.fa.fa-spinner.fa-spin
-              |    Fans
+        .col-sm-4.col-xs-5.small-pf
+          .test
+            select#tool_select.form-control.input-sm
+              option(value='') Hotend 1
+              
+            .push(style='height:10px;')
+
+            .input-group
+              input.form-control.input-sm.text-right(type='text', placeholder='5')
+              span.input-group-addon mm
+
+            .push(style='height:10px;')
+
+            a.btn.btn-default.btn-sm.btn-block(href='#')
+              i.fa.fa-filter
+              |  Extrude
+                      
+          .row.small-nopad(style="margin-top:20px")
+            .col-xs-8.small-pf-r
+              .btn-group.btn-group-justified(role='group', aria-label='...')
+                .btn-group(role='group', aria-label='...')
+                  button.btn.btn-default.btn-xs(type='button')
+                    i.fa.fa-gears
+                    br
+                    |    On
+                .btn-group(role='group', aria-label='...')
+                  button.btn.btn-default.btn-xs(type='button')
+                    i.fa.fa-gears
+                    br
+                    |    Off
+            .col-xs-4.small-pf-l
+              button.btn.btn-default.btn-block.btn-xs(type='button')
+                  i.fa.fa-spinner
+                  br
+                  | Fan
               
     
     include includes/footer.jade 

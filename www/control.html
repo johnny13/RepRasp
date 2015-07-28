@@ -29,23 +29,38 @@
       <div class="row">
         <div class="col-sm-8 col-xs-7">
           <div class="btn-group btn-group-justified"><a href="#" class="btn btn-default btn-xs col-sm-4"><i class="fa fa-home fa-1"></i><br>X</a><a href="#" class="btn btn-default btn-xs col-sm-4"><i class="fa fa-home fa-1"></i><br>Y</a><a href="#" class="btn btn-default btn-xs col-sm-4"><i class="fa fa-home fa-1"></i><br>Z</a></div>
-          <div style="height:10px;" class="push"></div>
-          <div class="btn-group btn-group-justified"><a href="#" class="btn btn-success col-sm-4 plus_x"><i class="fa fa-plus fa-1"></i></a><a href="#" class="btn btn-success col-sm-4 plus_y"><i class="fa fa-plus fa-1"></i></a><a href="#" class="btn btn-success col-sm-4 plus_z"><i class="fa fa-plus fa-1"></i></a></div>
-          <div class="btn-group btn-group-justified"><a href="#" class="btn btn-danger col-sm-4 minus_x"><i class="fa fa-minus fa-1"></i></a><a href="#" class="btn btn-danger ol-sm-4 minus_y"><i class="fa fa-minus fa-1"></i></a><a href="#" class="btn btn-danger col-sm-4 minus_z"><i class="fa fa-minus fa-1"></i></a></div>
-          <div style="height:10px;" class="push"></div>
+          <div style="height:20px;" class="push"></div>
+          <div class="btn-group btn-group-justified"><a href="#" class="btn btn-success btn-lg col-sm-4 plus_x"><i class="fa fa-plus fa-2"></i></a><a href="#" class="btn btn-success btn-lg col-sm-4 plus_y"><i class="fa fa-plus fa-2"></i></a><a href="#" class="btn btn-success btn-lg col-sm-4 plus_z"><i class="fa fa-plus fa-2"></i></a></div>
+          <div class="btn-group btn-group-justified"><a href="#" class="btn btn-danger btn-lg col-sm-4 minus_x"><i class="fa fa-minus fa-2"></i></a><a href="#" class="btn btn-danger btn-lg ol-sm-4 minus_y"><i class="fa fa-minus fa-2"></i></a><a href="#" class="btn btn-danger btn-lg col-sm-4 minus_z"><i class="fa fa-minus fa-2"></i></a></div>
+          <div style="height:20px;" class="push"></div>
           <div class="btn-group btn-group-justified measured_amount"><a href="#" data-amount="0.1" class="btn btn-primary btn-xs col-sm-3">0.1</a><a href="#" data-amount="1" class="btn btn-primary active btn-xs col-sm-3">1</a><a href="#" data-amount="10" class="btn btn-primary btn-xs col-sm-3">10</a><a href="#" data-amount="100" class="btn btn-primary btn-xs col-sm-3">100</a></div>
         </div>
-        <div class="col-sm-4 col-xs-5">
-          <select id="tool_select" class="form-control input-sm">
-            <option value="">Hotend</option>
-          </select>
-          <div style="height:10px;" class="push"></div>
-          <div class="input-group">
-            <input type="text" placeholder="5" class="form-control input-sm text-right"><span class="input-group-addon">mm</span>
+        <div class="col-sm-4 col-xs-5 small-pf">
+          <div class="test">
+            <select id="tool_select" class="form-control input-sm">
+              <option value="">Hotend 1</option>
+            </select>
+            <div style="height:10px;" class="push"></div>
+            <div class="input-group">
+              <input type="text" placeholder="5" class="form-control input-sm text-right"><span class="input-group-addon">mm</span>
+            </div>
+            <div style="height:10px;" class="push"></div><a href="#" class="btn btn-default btn-sm btn-block"><i class="fa fa-filter"></i> Extrude</a>
           </div>
-          <div style="height:10px;" class="push"></div><a href="#" class="btn btn-default btn-sm btn-block"><i class="fa fa-filter"></i> Extrude</a>
-          <div style="height:16px;" class="push"></div>
-          <div class="btn-group btn-group-justified"><a href="#" class="btn btn-info btn-sm col-sm-3 motor_toggle top-spin"><i class="fa fa-cog"></i>   Motor</a><a href="#" class="btn btn-success btn-sm col-sm-3 fans_toggle top-spin"><i class="fa fa-spinner fa-spin"></i>   Fans</a></div>
+          <div style="margin-top:20px" class="row small-nopad">
+            <div class="col-xs-8 small-pf-r">
+              <div role="group" aria-label="..." class="btn-group btn-group-justified">
+                <div role="group" aria-label="..." class="btn-group">
+                  <button type="button" class="btn btn-default btn-xs"><i class="fa fa-gears"></i><br>   On</button>
+                </div>
+                <div role="group" aria-label="..." class="btn-group">
+                  <button type="button" class="btn btn-default btn-xs"><i class="fa fa-gears"></i><br>   Off</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-4 small-pf-l">
+              <button type="button" class="btn btn-default btn-block btn-xs"><i class="fa fa-spinner"></i><br>Fan</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
