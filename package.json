@@ -72,7 +72,6 @@
     "grunt-shell": "*",
     "grunt-contrib-connect": "*",
     "grunt-exec": "*",
-    "grunt-template": "*",
-    "load-grunt-tasks": "*"
+    "grunt-template": "*"
   }
 }
