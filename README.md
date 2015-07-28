@@ -61,7 +61,10 @@ If you would like to customize the UI you will need to run the **grunt dev** com
 
 You will need to enable octoprint's cross-origin-resouce-sharing **CORS** API option [octoprint content-type](http://docs.octoprint.org/en/master/api/general.html#content-type) on OctoPrint if you are developing on a machine other than the local raspberry the octoprint server is running on.
 
-    grunt dev // live reload. edit sass and jade and have fun
-    grunt server // run a simple web server. servers content from /www
-    grunt reset // resets repo and rebuilds everything
+    grunt connect:server    // run a simple web server. servers content from /www/
+    
+these commands requires **npm install --dev** and should not be run on the raspberry if it can be avoided (slow)
+
+    grunt reset             // resets repo and rebuilds everything
+    grunt dev               // live reload. edit sass and jade and have fun
 
