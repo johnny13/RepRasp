@@ -6,7 +6,7 @@ html
     include includes/navigate.jade
     .container-fluid
       .row
-        .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+        .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
           .panel.panel-default.status_panel
             .panel-heading
               h4
@@ -16,7 +16,7 @@ html
               p.lead.status_lead.alert
                 span#mac_state
               .row
-                .col-xs-6
+                .col-xs-6 
                   label Baudrate
                   select#connection_baudrates.form-control
                     option(value='') AUTO

@@ -1,34 +1,31 @@
-// navbar
-.navbar.navbar-fixed-top.navbar-default
-  .navbar-header
-    button.navbar-toggle(type='button', data-toggle='offcanvas', data-target='.navbar-offcanvas', data-canvas='body')
-      span.icon-bar
-      span.icon-bar
-      span.icon-bar
-    a.navbar-brand.home_link(href='index.html') RepRasp
-  .navbar-offcanvas.navmenu-fixed-right.offcanvas
-    ul.nav.navbar-nav
-      li
-        a(href='index.html')
-          i.fa.fa-star.fa-2
-          |   HOME
-      li
-        a(href='print.html')
-          i.fa.fa-cube.fa-2
-          |   PRINT
-      li
-        a(href='control.html')
-          i.fa.fa-arrows.fa-2
-          |   MOVE
-      li
-        a(href='terminal.html')
-          i.fa.fa-tasks.fa-2
-          |   TERMINAL
-      li
-        a(href='settings.html')
-          i.fa.fa-wrench.fa-2
-          |   CONFIG
-    p.hidden-md.hidden-lg.hidden-sm
-      img.img-responsive(src='webroot/files/lips250.png', style='max-width:130px;width:100%;margin:-20px auto;')
-    p.lead.footertext.hidden-md.hidden-lg.hidden-sm
-      © 2015 huement.com
+.navmenu.navmenu-default.navmenu-fixed-right.offcanvas
+  a.navmenu-brand(href='#') RepRasp
+  ul.nav.navmenu-nav.minset
+    li
+      a(href='index.html')
+        i.fa.fa-star.fa-2
+        |   HOME
+    li
+      a(href='print.html')
+        i.fa.fa-cube.fa-2
+        |   PRINT
+    li
+      a(href='control.html')
+        i.fa.fa-arrows.fa-2
+        |   MOVE
+    li
+      a(href='terminal.html')
+        i.fa.fa-tasks.fa-2
+        |   TERMINAL
+    li
+      a(href='settings.html')
+        i.fa.fa-wrench.fa-2
+        |   CONFIG
+
+  img.img-responsive(src='webroot/files/lips250.png', style='max-width:130px;width:100%;margin:-20px auto;')
+  p.lead.footertext(style='max-width:130px;width:100%;margin:0px auto;')
+    © 2015 huement.com
+    
+.navbar.navbar-fixed-top
+  button.navbar-toggle.action-button.background-primary(type='button', data-toggle='offcanvas', data-target='.navmenu', data-canvas='body')
+    i.fa.fa-star

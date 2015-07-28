@@ -71,7 +71,7 @@ module.exports = function (grunt) {
         banner: '<%= pkg.name %>-<%= pkg.version %>',
       },
       files: {
-          'webroot/css/<%= pkg.name %>.min.css': ['assets/stylesheets/hui_built.css']
+          'www/webroot/css/<%= pkg.name %>.min.css': ['assets/stylesheets/hui_built.css']
       }
       },
     },
@@ -187,6 +187,12 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
+	
+  /**
+   * Load Grunt plugins.
+   * call these from the command line, or just grunt for default.
+   */
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
   
   grunt.registerTask('default', ['reset','connect']);
   
