@@ -1,59 +1,34 @@
-//
-  Ride the Lighting 
-nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
-  .container
-    .navbar-header
-      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-ex1-collapse')
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand(href='index.html')
-        span.fa.fa-flask
-        strong H
-        strong U
-        strong I
-    //
-       Collect the nav links, forms, and other content for toggling 
-    .collapse.navbar-collapse.navbar-ex1-collapse
-      ul.nav.navbar-nav.navbar-right
-        li#START
-          a(href='getting_started.html')
-            i.fa.fa-dashboard
-            |  Start
-        li#CSS
-          a(href='css.html')
-            i.fa.fa-magic
-            |  CSS
-        li#COMP
-          a(href='components.html')
-            i.fa.fa-toggle-on
-            |  Components
-        li#JS
-          a(href='javascript.html')
-            i.fa.fa-bug
-            |  JavaScript
-        li.dropdown
-          a#download.dropdown-toggle(data-toggle='dropdown', href='#')
-            i.fa.fa-rocket
-            |  Stuff
-            span.caret
-          ul.dropdown-menu(aria-labelledby='download')
-            li
-              a(href='demos/') 
-                i.fa.fa-code
-                |  Demos
-            li.divider
-            li
-              a(href='./bootstrap.min.css') bootstrap.min.css
-            li
-              a(href='./bootstrap.css') bootstrap.css
-            li.divider
-            li
-              a(href='./variables.less') variables.sass
-            li
-              a(href='./bootswatch.less') Gruntfile.js
-    //
-       /.navbar-collapse 
-  //
-     /.container
+// navbar
+.navbar.navbar-fixed-top.navbar-default
+  .navbar-header
+    button.navbar-toggle(type='button', data-toggle='offcanvas', data-target='.navbar-offcanvas', data-canvas='body')
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    a.navbar-brand.home_link(href='index.html') RepRasp
+  .navbar-offcanvas.navmenu-fixed-right.offcanvas
+    ul.nav.navbar-nav
+      li
+        a(href='index.html')
+          i.fa.fa-star.fa-2
+          |   HOME
+      li
+        a(href='print.html')
+          i.fa.fa-cube.fa-2
+          |   PRINT
+      li
+        a(href='control.html')
+          i.fa.fa-arrows.fa-2
+          |   MOVE
+      li
+        a(href='terminal.html')
+          i.fa.fa-tasks.fa-2
+          |   TERMINAL
+      li
+        a(href='settings.html')
+          i.fa.fa-wrench.fa-2
+          |   CONFIG
+    p.hidden-md.hidden-lg.hidden-sm
+      img.img-responsive(src='webroot/files/lips250.png', style='max-width:130px;width:100%;margin:-20px auto;')
+    p.lead.footertext.hidden-md.hidden-lg.hidden-sm
+      © 2015 huement.com

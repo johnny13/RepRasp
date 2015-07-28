@@ -2,7 +2,7 @@
 
 var stack_bar_top = {"dir1": "down", "dir2": "right", "push": "top", "spacing1": 0, "spacing2": 0, "firstpos1": 0, "firstpos2": 0};
 
-function MumfordNote(ntitle,nmessage,ntype){
+function MumfordNote(ntitle,nmessage,ntype,stuck){
 
     var notetitle = false;
     if(ntitle != undefined && ntitle != false && ntitle != "false" && ntitle != 0){
@@ -18,12 +18,17 @@ function MumfordNote(ntitle,nmessage,ntype){
     if(ntype != undefined){
         notetype = ntype;
     }
+  
+    var hide = true;
+    if(stuck !== undefined){
+      hide = false;
+    }
 
     var opts = {
         title: notetitle,
         text: notemsg,
         mouse_reset: false,
-        hide: true,
+        hide: hide,
         addclass: "stack-bar-top",
         stack: stack_bar_top,
         width: "100%",

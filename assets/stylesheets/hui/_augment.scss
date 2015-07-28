@@ -1,4 +1,69 @@
 .background-primary {
   background: $brand-primary;
   background-color: $brand-primary;
-} 
+}
+
+.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-brand:hover {
+  color:$brand-primary;
+}
+
+.status_lead { font-size: 23px;margin:0px auto 15px auto;text-align: center;padding:10px;}
+
+.navbar-toggle {
+  padding:0px;
+}
+
+.panel-heading {
+  padding:1px 10px;
+}
+
+.top-spin {padding-top:5px;}
+
+body {
+  padding-top: 75px;
+  padding-bottom: 20px;
+}
+
+.footertext {
+  color:#fff;
+  font-size:13px;
+  position: absolute;
+  bottom:0px;
+  right:0px;
+  padding-right:5px;
+}
+
+.navbar-default .navbar-offcanvas .navmenu-brand {
+  color:#FFFFFF;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 768px){
+  body {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+  .navbar-default .navbar-brand {
+    padding:5px;
+  }
+  .navbar {
+    min-height:30px;
+    height:30px;
+    margin-bottom:0px;
+  }
+  .navbar-header,.navbar-brand {
+    height: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    float: right;
+  }
+  
+}

@@ -10,7 +10,8 @@ script(src='webroot/libs/minimal/html5shiv.js')
 script(src='webroot/libs/json2.js')
 script(src='webroot/libs/pnotify.custom.min.js')
 script(src='webroot/libs/pnotify-function.js')
-script(src="webroot/js/json.js")
+script(src="webroot/libs/jstorage.min.js")
+script(src="webroot/libs/moment.min.js")
 script(src="webroot/js/RepRasp.js")
 script(type='text/javascript').
 	console.debug("RepRasp Started");
@@ -20,7 +21,7 @@ script(type='text/javascript').
 		div.col-xs-12
 			div.push
 				&nbsp;
-			p.text-right
+			p.text-right.hidden-xs.hidden-sm
 				© 2015 huement.com
 			div.push
 				&nbsp;

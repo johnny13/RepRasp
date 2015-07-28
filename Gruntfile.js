@@ -23,8 +23,7 @@ module.exports = function (grunt) {
         '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
         '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
         ' License: <%= pkg.license.type %> */' + "\n",
-      bootbanner: "\n" + "/*! -- I Built This. Dont Hate. -- */" + "\n" + "\n" + "\n",
-      iebanner: "\n" + "/*! -- Internet Explorer Users Are People Too -- */" + "\n" + "\n" + "\n"
+      bootbanner: "\n" + "/*! -- I Built This. Dont Hate. -- */" + "\n" + "\n" + "\n"
     },
     jqueryCheck: 'if (!jQuery) { throw new Error(\"HUI requires jQuery\") }\\n\\n',
     // Task configuration.
@@ -86,10 +85,9 @@ module.exports = function (grunt) {
       },
       javascript: {
         src: [
-          'assets/javascripts/hui/actions.js', // command logic
-          'assets/javascripts/hui/ui.js', // ui functions
-          'assets/javascripts/hui/print_functions.js', // command logic
-          'assets/javascripts/hui/docready.js', // command logic
+          'assets/javascripts/docready.js', // setup each page and globals
+          'assets/javascripts/actions.js', // command logic
+          'assets/javascripts/print_functions.js' // page specific functions
         ],
         dest: 'www/webroot/js/<%= pkg.name %>.js'
       },
@@ -142,7 +140,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: 'assets/javascripts/{,*/}*.{js,json}',
-        tasks: ['concat:javascript', 'copy:config']
+        tasks: ['concat:javascript', 'copy:config', 'uglify']
       }
     },
     /*
@@ -153,7 +151,7 @@ module.exports = function (grunt) {
         banner: '/*! <%= pkg.name %> <%= pkg.homepage %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'www/webroot/js/<%= pkg.name %>-<%= pkg.version %>.js',
+        src: 'www/webroot/js/<%= pkg.name %>.js',
         dest: 'www/webroot/js/<%= pkg.name %>.min.js'
       }
     },

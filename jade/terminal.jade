@@ -1,134 +1,20 @@
 doctype html
 html
   include includes/head.jade
-body
-  include includes/navigate.jade
-  .container
-      .row
-          //
-             Customizer form 
-          form.bs-customizer(role='form')
-            #less-section.bs-docs-section
-              .page-header
-                button.btn.btn-default.toggle(type='button') Toggle all
-                h1#less Less files
-              p.lead
-                | Choose which Less files to compile into your custom build of Jasny Bootstrap. Not sure which files to use? Read through the
-                a(href='../css/') CSS
-                | and
-                a(href='../components/') Components
-                | pages in the docs.
-              .row
-                .col-xs-6.col-sm-4
-                  h3 Common CSS
-                  .checkbox
-                    label
-                      input(type='checkbox', checked='checked', value='grid-container-smooth.less')
-                      | Grid system
-                  .checkbox
-                    label
-                      input(type='checkbox', checked='checked', value='button-labels.less')
-                      | Button labels
-                //
-                   .col-xs-6 .col-sm-4 
-                .col-xs-6.col-sm-4
-                  h3 Components
-                  .checkbox
-                    label
-                      input(type='checkbox', checked='checked', value='navmenu.less')
-                      | Navmenu
-                  .checkbox
-                    label
-                      input(type='checkbox', checked='checked', value='alerts-fixed.less')
-                      | Alerts
-                //
-                   .col-xs-6 .col-sm-4 
-                .col-xs-6.col-sm-4
-                  h3 JavaScript components
-                  .checkbox
-                    label
-                      input(type='checkbox', checked='checked', value='offcanvas.less')
-                      | Off canvas
-                  .checkbox
-                    label
-                      input(type='checkbox', checked='checked', value='rowlink.less')
-                      | Rowlink
-                  .checkbox
-                    label
-                      input(type='checkbox', checked='checked', value='inputmask.less')
-                      | Input mask
-                  .checkbox
-                    label
-                      input(type='checkbox', checked='checked', value='fileinput.less')
-                      | File input
-                //
-                   .col-xs-6 .col-sm-4 
-              //
-                 /.row 
-              .bs-callout.bs-callout-danger
-                h4 Twitter Bootstrap required
-                p
-                  | Jasny Bootstrap requires
-                  a(href='http://getbootstrap.com/', target='_blank') Twitter Bootstrap
-                  | to be included.
-            #plugin-section.bs-docs-section
-              .page-header
-                button.btn.btn-default.toggle(type='button') Toggle all
-                h1#plugins jQuery plugins
-              p.lead
-                | Choose which jQuery plugins should be included in your custom JavaScript files. Unsure what to include? Read the
-                a(href='../javascript/') JavaScript
-                | page in the docs.
-              .row
-                .col-lg-6
-                  h4 Linked to components
-                  .checkbox
-                    label
-                      input(type='checkbox', checked='checked', value='rowlink.js')
-                      | Rowlink
-                  .checkbox
-                    label
-                      input(type='checkbox', checked='checked', value='inputmask.js')
-                      | Input mask
-                  .checkbox
-                    label
-                      input(type='checkbox', checked='checked', value='fileinput.js')
-                      | File input
-                .col-lg-6
-                  h4 Magic
-                  .checkbox
-                    label
-                      input(type='checkbox', checked='checked', value='offcanvas.js')
-                      | Off canvas
-              .bs-callout.bs-callout-info
-                h4 Produces two files
-                p
-                  | All checked plugins will be compiled into a readable
-                  code jasny-bootstrap.js
-                  | and a minified
-                  code jasny-bootstrap.min.js
-                  | . We recommend you use the minified version in production.
-              .bs-callout.bs-callout-danger
-                h4 jQuery required
-                p
-                  | All plugins require the latest version of
-                  a(href='http://jquery.com/', target='_blank') jQuery
-                  | to be included.
-            #less-variables-section.bs-docs-section
-              .page-header
-                button.btn.btn-default.toggle(type='reset') Reset to defaults
-                h1#less-variables Less variables
-              p.lead
-                | Customize Less variables to define colors, sizes and more inside your custom CSS stylesheets.
-              | {% include customizer-variables.html %}
-            .bs-docs-section
-              .page-header
-                h1#download Download
-              p.lead
-                | Hooray! Your custom version of Jasny Bootstrap is now ready to be compiled. Just click the button below to finish the process.
-              .bs-customize-download
-                button#btn-compile.btn.btn-block.btn-lg.btn-outline(type='submit', onclick='_gaq.push([\'_trackEvent\', \'Customize\', \'Download\', \'Customize and Download\']);') Compile and Download
-            //
-               /download 
-  
-  include includes/footer.jade
+  body
+    include includes/navigate.jade
+    
+    .container
+      .push(style='height:10px')
+      .jumbotron.hero-spacer
+        .row
+          .col-xs-4.col-sm-3
+            .push(style='height:15px')
+            img.img-responsive(src='http://huementui.s3.amazonaws.com/images/hui-rainbow.png', style='margin-left:auto;margin-right:auto;')
+          .col-xs-8.col-sm-9
+            h1 Huement User Interface
+            p.lead
+              | A Bootleg version of Bootstrap 3. It's an awesome new way to use your favorite UI Toolkit.
+
+    
+    include includes/footer.jade 
