@@ -14,5 +14,6 @@ sleep 1
 echo #####################
 echo # START RPi-Display #
 echo #####################
+cd /home/pi/RepRasp/ && /usr/local/bin/grunt connect:server
 ./start_chrome_fullscreen.sh
 #./start_midori_fullscreen.sh
