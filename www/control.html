@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RepRasp - 3D Printer Touchscreen</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="webroot/css/hui-min.css">
+    <link rel="stylesheet" href="webroot/libs/pnotify.custom.min.css">
+    <link rel="stylesheet" href="webroot/css/RepRasp.css">
+  </head>
+</html>
+<body><!--
+  <Ride>the Lighting </Ride>-->
+  <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="index.html" class="navbar-brand"><span class="fa fa-flask"></span><strong>H</strong><strong>U</strong><strong>I</strong></a>
+      </div><!--
+      <Collect>the nav links, forms, and other content for toggling </Collect>-->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li id="START"><a href="getting_started.html"><i class="fa fa-dashboard"></i> Start</a></li>
+          <li id="CSS"><a href="css.html"><i class="fa fa-magic"></i> CSS</a></li>
+          <li id="COMP"><a href="components.html"><i class="fa fa-toggle-on"></i> Components</a></li>
+          <li id="JS"><a href="javascript.html"><i class="fa fa-bug"></i> JavaScript</a></li>
+          <li class="dropdown"><a id="download" data-toggle="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-rocket"></i> Stuff<span class="caret"></span></a>
+            <ul aria-labelledby="download" class="dropdown-menu">
+              <li><a href="demos/"> <i class="fa fa-code"></i> Demos</a></li>
+              <li class="divider"></li>
+              <li><a href="./bootstrap.min.css">bootstrap.min.css</a></li>
+              <li><a href="./bootstrap.css">bootstrap.css</a></li>
+              <li class="divider"></li>
+              <li><a href="./variables.less">variables.sass</a></li>
+              <li><a href="./bootswatch.less">Gruntfile.js</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.navbar-collapse -->
+    </div><!--/.container-->
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <h1 id="overview">CSS</h1>
+        </div>
+        <h3 id="overview-container">Containers</h3>
+        <p>Added<code>.container-smooth</code>a container to use the same<code>max-width</code>for all viewport sizes. This means that the container size won't jump at media query breakpoints.</p>
+      </div>
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <h1 id="buttons">Buttons</h1>
+        </div>
+        <div>
+          <h2 id="buttons-labels">Labels</h2>
+          <p>Give a button some extra style by adding a label. Add<code>.btn-labeled</code>to any button with a label.</p>
+          <div class="bs-example">
+            <button type="button" class="btn btn-labeled btn-default"><span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>Left</button>
+            <button type="button" class="btn btn-labeled btn-default">Right<span class="btn-label btn-label-right"><i class="fa fa-arrow-circle-right"></i></span></button>
+            <button type="button" class="btn btn-labeled btn-success"><span class="btn-label"><i class="fa fa-check-square"></i></span>Success</button>
+            <button type="button" class="btn btn-labeled btn-danger"><span class="btn-label"><i class="fa fa-minus-square"></i></span>Danger</button>
+          </div>
+          <div class="push"></div>
+          <pre class="htmlCode">&lt;!-- Standard button with label --&gt; 
+ &lt;button type=&quot;button&quot; class=&quot;btn btn-labeled btn-default&quot;&gt; 
+  &lt;span class=&quot;btn-label&quot;&gt;&lt;i class=&quot;fa fa-arrow-circle-left&quot;&gt;&lt;/i&gt;&lt;/span&gt;Left 
+  &lt;/button&gt; 
+  &lt;!-- Standard button with label on the right side --&gt; 
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-labeled btn-default&quot;&gt; 
+  Right&lt;span class=&quot;btn-label btn-label-right&quot;&gt;&lt;i class=&quot;fa fa-arrow-circle-right&quot;&gt;&lt;/i&gt;&lt;/span&gt; 
+  &lt;/button&gt; 
+  &lt;!-- Success button with label --&gt; 
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-labeled btn-success&quot;&gt; 
+  &lt;span class=&quot;btn-label&quot;&gt;&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt;&lt;/span&gt;Success 
+  &lt;/button&gt; 
+  &lt;!-- Danger button with label --&gt; 
+  &lt;button type=&quot;button&quot; class=&quot;btn btn-labeled btn-danger&quot;&gt; 
+  &lt;span class=&quot;btn-label&quot;&gt;&lt;i class=&quot;fa fa-minus-square&quot;&gt;&lt;/i&gt;&lt;/span&gt;Danger 
+ &lt;/button&gt;</pre>
+        </div>
+      </div>
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <h1 id="buttons">Forms</h1>
+        </div>
+        <div>
+          <h2 id="forms">Input Spinners</h2>
+          <p>These spinners allow you to easily allow mobile users quick ways to change the data with out needing the clunky mobile keyboard and refocusing the viewport. Adding them is mostly done via <code>data-attributes</code>and requires very little javascript. For advanced options and more in-depth control see the javascript section. </p>
+          <div class="bs-example">
+            <p class="lead"><!-- Track1 quant[1] --><div class="input-group">    <span class="input-group-btn">        <button type="button" class="btn btn-danger" id="Track1-minus"  data-type="minus" data-field="quant[1]">            <span class="fa fa-minus"></span>        </button>    </span>    <input type="text" name="Track1-error" id="Track1-error" class="form-control" value="No Reminder" style="display:none" disabled/>    <input type="text" name="quant[1]" id="Track1-text" class="form-control input-number" data-dj="Track1" value="3" data-limit="3" min="3" max="72">    <span class="input-group-btn">        <button type="button" class="btn btn-success" id="Track1-plus" data-type="plus" data-field="quant[1]">            <span class="fa fa-plus"></span>        </button>    </span></div></p>
+          </div>
+          <pre class="htmlCode"> &lt;!-- Track1 quant[1] --&gt;
+&lt;div class=&quot;input-group&quot;&gt;
+   &lt;span class=&quot;input-group-btn&quot;&gt;
+       &lt;button type=&quot;button&quot; class=&quot;btn btn-danger&quot; id=&quot;Track1-minus&quot;  data-type=&quot;minus&quot; data-field=&quot;quant[1]&quot;&gt;
+           &lt;span class=&quot;fa fa-minus&quot;&gt;&lt;/span&gt;
+       &lt;/button&gt;
+   &lt;/span&gt;
+
+   &lt;input type=&quot;text&quot; id=&quot;Track1-error&quot; class=&quot;form-control&quot; value=&quot;No Reminder&quot; style=&quot;display:none&quot; disabled/&gt;
+   &lt;input type=&quot;text&quot; name=&quot;quant[1]&quot; id=&quot;Track1-text&quot; class=&quot;form-control &quot; value=&quot;3&quot; data-limit=&quot;3&quot; max=&quot;72&quot;&gt;
+
+   &lt;span class=&quot;input-group-btn&quot;&gt;
+       &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; id=&quot;Track1-plus&quot; data-type=&quot;plus&quot; data-field=&quot;quant[1]&quot;&gt;
+           &lt;span class=&quot;fa fa-plus&quot;&gt;&lt;/span&gt;
+       &lt;/button&gt;
+   &lt;/span&gt;
+&lt;/div&gt;
+&lt;small&gt;
+ &lt;p style=&quot;margin-top:10px;display:none;&quot; id=&quot;Track1-alert&quot; class=&quot;alert alert-info alert-dismissable&quot;&gt;
+   No Reminder will be sent. This is not recommended.
+ &lt;/p&gt;
+&lt;/small&gt;
+&lt;div class=&quot;push&quot; style=&quot;height:10px;&quot;&gt;&lt;/div&gt;
+&lt;p class=&quot;lead&quot;&gt;This has a minimum value of 3. Anything below that triggers the disabled state&lt;/p&gt;</pre>
+          <div class="push"></div>
+        </div>
+        <div>
+          <h2 id="forms">Input Masking</h2>
+          <p>HUI has a number of form validation enhancements. The use the standard bootstrap form classes. If your forms are already in the bootstrap format adding validation handling and coloring will be a snap! For more information see the javascript validation section.</p>
+          <div class="bs-example">
+            <p class="lead">Make sure you have NodeJS, NPM and GruntJS installed. Install all the requirements. </p>
+          </div>
+          <div class="push"></div>
+        </div>
+        <div>
+          <h2 id="forms">Validation</h2>
+          <p>HUI has a number of form validation enhancements. The use the standard bootstrap form classes. If your forms are already in the bootstrap format adding validation handling and coloring will be a snap! For more information see the javascript validation section.</p>
+          <div class="push"></div>
+        </div>
+      </div>
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <h1 id="buttons">Using Sass</h1>
+        </div>
+        <div>
+          <h2 id="sass">Custom Builds</h2>
+          <p>HUI is built on Bootstrap's <a href="https://github.com/twbs/bootstrap-sass">official Sass port</a>, FontAwesome and a number of custom HUI enhancements. Everything is easily customized and tweaked. Simply select the variables in any Sass file and build your own version using gruntjs. Make sure you have installed all the requirements first with <code>npm install</code>. For more information see the getting started section.</p>
+          <div class="bs-example">
+            <p class="lead">Make sure you have NodeJS, NPM and GruntJS installed. Install all the requirements. </p>
+          </div>
+          <div class="push"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="webroot/libs/jquery/jquery-1.10.2.min.js"></script>
+  <script src="webroot/js/hui.min.js"></script>
+  <script src="webroot/libs/modernizr/modernizr.2.6.2.custom.js"></script>
+  <script src="webroot/libs/minimal/consolefix.js"></script>
+  <script src="webroot/libs/minimal/css-media.js"></script>
+  <script src="webroot/libs/minimal/respond.min.js"></script>
+  <script src="webroot/libs/minimal/shiv.js"></script>
+  <script src="webroot/libs/minimal/html5shiv.js"></script>
+  <script src="webroot/libs/json2.js"></script>
+  <script src="webroot/libs/pnotify.custom.min.js"></script>
+  <script src="webroot/libs/pnotify-function.js"></script>
+  <script src="webroot/js/json.js"></script>
+  <script src="webroot/js/RepRasp.js"></script>
+  <script type="text/javascript">
+    console.debug("RepRasp Started");
+    
+  </script>
+  <div id="Foots" class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="push">&nbsp;</div>
+        <p class="text-right">© 2015 huement.com</p>
+        <div class="push">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+</body>

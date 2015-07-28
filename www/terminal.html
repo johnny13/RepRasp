@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RepRasp - 3D Printer Touchscreen</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="webroot/css/hui-min.css">
+    <link rel="stylesheet" href="webroot/libs/pnotify.custom.min.css">
+    <link rel="stylesheet" href="webroot/css/RepRasp.css">
+  </head>
+</html>
+<body><!--
+  <Ride>the Lighting </Ride>-->
+  <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="index.html" class="navbar-brand"><span class="fa fa-flask"></span><strong>H</strong><strong>U</strong><strong>I</strong></a>
+      </div><!--
+      <Collect>the nav links, forms, and other content for toggling </Collect>-->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li id="START"><a href="getting_started.html"><i class="fa fa-dashboard"></i> Start</a></li>
+          <li id="CSS"><a href="css.html"><i class="fa fa-magic"></i> CSS</a></li>
+          <li id="COMP"><a href="components.html"><i class="fa fa-toggle-on"></i> Components</a></li>
+          <li id="JS"><a href="javascript.html"><i class="fa fa-bug"></i> JavaScript</a></li>
+          <li class="dropdown"><a id="download" data-toggle="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-rocket"></i> Stuff<span class="caret"></span></a>
+            <ul aria-labelledby="download" class="dropdown-menu">
+              <li><a href="demos/"> <i class="fa fa-code"></i> Demos</a></li>
+              <li class="divider"></li>
+              <li><a href="./bootstrap.min.css">bootstrap.min.css</a></li>
+              <li><a href="./bootstrap.css">bootstrap.css</a></li>
+              <li class="divider"></li>
+              <li><a href="./variables.less">variables.sass</a></li>
+              <li><a href="./bootswatch.less">Gruntfile.js</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.navbar-collapse -->
+    </div><!--/.container-->
+  </nav>
+  <div class="container">
+    <div class="row"><!--
+      <Customizer>form </Customizer>-->
+      <form role="form" class="bs-customizer">
+        <div id="less-section" class="bs-docs-section">
+          <div class="page-header">
+            <button type="button" class="btn btn-default toggle">Toggle all</button>
+            <h1 id="less">Less files</h1>
+          </div>
+          <p class="lead">Choose which Less files to compile into your custom build of Jasny Bootstrap. Not sure which files to use? Read through the<a href="../css/">CSS</a>and<a href="../components/">Components</a>pages in the docs.</p>
+          <div class="row">
+            <div class="col-xs-6 col-sm-4">
+              <h3>Common CSS</h3>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="checked" value="grid-container-smooth.less">Grid system
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="checked" value="button-labels.less">Button labels
+                </label>
+              </div>
+            </div><!--
+            <div class="col-xs-6">.col-sm-4 </div>-->
+            <div class="col-xs-6 col-sm-4">
+              <h3>Components</h3>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="checked" value="navmenu.less">Navmenu
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="checked" value="alerts-fixed.less">Alerts
+                </label>
+              </div>
+            </div><!--
+            <div class="col-xs-6">.col-sm-4 </div>-->
+            <div class="col-xs-6 col-sm-4">
+              <h3>JavaScript components</h3>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="checked" value="offcanvas.less">Off canvas
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="checked" value="rowlink.less">Rowlink
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="checked" value="inputmask.less">Input mask
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="checked" value="fileinput.less">File input
+                </label>
+              </div>
+            </div><!--
+            <div class="col-xs-6">.col-sm-4 </div>-->
+          </div><!--/.row -->
+          <div class="bs-callout bs-callout-danger">
+            <h4>Twitter Bootstrap required</h4>
+            <p>Jasny Bootstrap requires<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>to be included.</p>
+          </div>
+        </div>
+        <div id="plugin-section" class="bs-docs-section">
+          <div class="page-header">
+            <button type="button" class="btn btn-default toggle">Toggle all</button>
+            <h1 id="plugins">jQuery plugins</h1>
+          </div>
+          <p class="lead">Choose which jQuery plugins should be included in your custom JavaScript files. Unsure what to include? Read the<a href="../javascript/">JavaScript</a>page in the docs.</p>
+          <div class="row">
+            <div class="col-lg-6">
+              <h4>Linked to components</h4>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="checked" value="rowlink.js">Rowlink
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="checked" value="inputmask.js">Input mask
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="checked" value="fileinput.js">File input
+                </label>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <h4>Magic</h4>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="checked" value="offcanvas.js">Off canvas
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="bs-callout bs-callout-info">
+            <h4>Produces two files</h4>
+            <p>All checked plugins will be compiled into a readable<code>jasny-bootstrap.js</code>and a minified<code>jasny-bootstrap.min.js</code>. We recommend you use the minified version in production.</p>
+          </div>
+          <div class="bs-callout bs-callout-danger">
+            <h4>jQuery required</h4>
+            <p>All plugins require the latest version of<a href="http://jquery.com/" target="_blank">jQuery</a>to be included.</p>
+          </div>
+        </div>
+        <div id="less-variables-section" class="bs-docs-section">
+          <div class="page-header">
+            <button type="reset" class="btn btn-default toggle">Reset to defaults</button>
+            <h1 id="less-variables">Less variables</h1>
+          </div>
+          <p class="lead">Customize Less variables to define colors, sizes and more inside your custom CSS stylesheets.</p>{% include customizer-variables.html %}
+        </div>
+        <div class="bs-docs-section">
+          <div class="page-header">
+            <h1 id="download">Download</h1>
+          </div>
+          <p class="lead">Hooray! Your custom version of Jasny Bootstrap is now ready to be compiled. Just click the button below to finish the process.</p>
+          <div class="bs-customize-download">
+            <button id="btn-compile" type="submit" onclick="_gaq.push(['_trackEvent', 'Customize', 'Download', 'Customize and Download']);" class="btn btn-block btn-lg btn-outline">Compile and Download</button>
+          </div>
+        </div><!--/download -->
+      </form>
+    </div>
+  </div>
+  <script src="webroot/libs/jquery/jquery-1.10.2.min.js"></script>
+  <script src="webroot/js/hui.min.js"></script>
+  <script src="webroot/libs/modernizr/modernizr.2.6.2.custom.js"></script>
+  <script src="webroot/libs/minimal/consolefix.js"></script>
+  <script src="webroot/libs/minimal/css-media.js"></script>
+  <script src="webroot/libs/minimal/respond.min.js"></script>
+  <script src="webroot/libs/minimal/shiv.js"></script>
+  <script src="webroot/libs/minimal/html5shiv.js"></script>
+  <script src="webroot/libs/json2.js"></script>
+  <script src="webroot/libs/pnotify.custom.min.js"></script>
+  <script src="webroot/libs/pnotify-function.js"></script>
+  <script src="webroot/js/json.js"></script>
+  <script src="webroot/js/RepRasp.js"></script>
+  <script type="text/javascript">
+    console.debug("RepRasp Started");
+    
+  </script>
+  <div id="Foots" class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="push">&nbsp;</div>
+        <p class="text-right">© 2015 huement.com</p>
+        <div class="push">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+</body>

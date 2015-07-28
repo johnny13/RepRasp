@@ -1,0 +1,92 @@
+doctype html
+html
+  include includes/head.jade
+body
+  include includes/navigate.jade
+  .container
+    .row
+     
+      .bs-docs-section
+        .page-header
+          h1#overview CSS
+        h3#overview-container Containers
+        p
+          | Added
+          code .container-smooth
+          | a container to use the same
+          code max-width
+          | for all viewport sizes. This means that the container size won't jump at media query breakpoints.
+     
+      .bs-docs-section
+        .page-header
+          h1#buttons Buttons
+        div
+          h2#buttons-labels Labels
+          p
+            | Give a button some extra style by adding a label. Add
+            code .btn-labeled
+            | to any button with a label.
+          .bs-example
+            button.btn.btn-labeled.btn-default(type='button')
+              span.btn-label
+                i.fa.fa-arrow-circle-left
+              | Left
+            button.btn.btn-labeled.btn-default(type='button')
+              | Right
+              span.btn-label.btn-label-right
+                i.fa.fa-arrow-circle-right
+            button.btn.btn-labeled.btn-success(type='button')
+              span.btn-label
+                i.fa.fa-check-square
+              | Success
+            button.btn.btn-labeled.btn-danger(type='button')
+              span.btn-label
+                i.fa.fa-minus-square
+              | Danger
+          .push
+          pre.htmlCode
+              = '<!-- Standard button with label --> \n <button type="button" class="btn btn-labeled btn-default"> \n  <span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>Left \n  </button> \n  <!-- Standard button with label on the right side --> \n  <button type="button" class="btn btn-labeled btn-default"> \n  Right<span class="btn-label btn-label-right"><i class="fa fa-arrow-circle-right"></i></span> \n  </button> \n  <!-- Success button with label --> \n  <button type="button" class="btn btn-labeled btn-success"> \n  <span class="btn-label"><i class="fa fa-check-square"></i></span>Success \n  </button> \n  <!-- Danger button with label --> \n  <button type="button" class="btn btn-labeled btn-danger"> \n  <span class="btn-label"><i class="fa fa-minus-square"></i></span>Danger \n </button>'
+      
+      .bs-docs-section
+        .page-header
+          h1#buttons Forms
+        div
+          h2#forms Input Spinners
+          p
+            | These spinners allow you to easily allow mobile users quick ways to change the data with out needing the clunky mobile keyboard and refocusing the viewport. Adding them is mostly done via 
+            code data-attributes
+            | and requires very little javascript. For advanced options and more in-depth control see the javascript section. 
+          .bs-example
+            p.lead
+              | <!-- Track1 quant[1] --><div class="input-group">    <span class="input-group-btn">        <button type="button" class="btn btn-danger" id="Track1-minus"  data-type="minus" data-field="quant[1]">            <span class="fa fa-minus"></span>        </button>    </span>    <input type="text" name="Track1-error" id="Track1-error" class="form-control" value="No Reminder" style="display:none" disabled/>    <input type="text" name="quant[1]" id="Track1-text" class="form-control input-number" data-dj="Track1" value="3" data-limit="3" min="3" max="72">    <span class="input-group-btn">        <button type="button" class="btn btn-success" id="Track1-plus" data-type="plus" data-field="quant[1]">            <span class="fa fa-plus"></span>        </button>    </span></div>
+          pre.htmlCode 
+            = '&lt;!-- Track1 quant[1] --&gt;\n&lt;div class=&quot;input-group&quot;&gt;\n   &lt;span class=&quot;input-group-btn&quot;&gt;\n       &lt;button type=&quot;button&quot; class=&quot;btn btn-danger&quot; id=&quot;Track1-minus&quot;  data-type=&quot;minus&quot; data-field=&quot;quant[1]&quot;&gt;\n           &lt;span class=&quot;fa fa-minus&quot;&gt;&lt;/span&gt;\n       &lt;/button&gt;\n   &lt;/span&gt;\n\n   &lt;input type=&quot;text&quot; id=&quot;Track1-error&quot; class=&quot;form-control&quot; value=&quot;No Reminder&quot; style=&quot;display:none&quot; disabled/&gt;\n   &lt;input type=&quot;text&quot; name=&quot;quant[1]&quot; id=&quot;Track1-text&quot; class=&quot;form-control &quot; value=&quot;3&quot; data-limit=&quot;3&quot; max=&quot;72&quot;&gt;\n\n   &lt;span class=&quot;input-group-btn&quot;&gt;\n       &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot; id=&quot;Track1-plus&quot; data-type=&quot;plus&quot; data-field=&quot;quant[1]&quot;&gt;\n           &lt;span class=&quot;fa fa-plus&quot;&gt;&lt;/span&gt;\n       &lt;/button&gt;\n   &lt;/span&gt;\n&lt;/div&gt;\n&lt;small&gt;\n &lt;p style=&quot;margin-top:10px;display:none;&quot; id=&quot;Track1-alert&quot; class=&quot;alert alert-info alert-dismissable&quot;&gt;\n   No Reminder will be sent. This is not recommended.\n &lt;/p&gt;\n&lt;/small&gt;\n&lt;div class=&quot;push&quot; style=&quot;height:10px;&quot;&gt;&lt;/div&gt;\n&lt;p class=&quot;lead&quot;&gt;This has a minimum value of 3. Anything below that triggers the disabled state&lt;/p&gt;'
+          .push
+        div
+          h2#forms Input Masking
+          p
+            | HUI has a number of form validation enhancements. The use the standard bootstrap form classes. If your forms are already in the bootstrap format adding validation handling and coloring will be a snap! For more information see the javascript validation section.
+          .bs-example
+            p.lead Make sure you have NodeJS, NPM and GruntJS installed. Install all the requirements. 
+          .push
+        div
+          h2#forms Validation
+          p
+            | HUI has a number of form validation enhancements. The use the standard bootstrap form classes. If your forms are already in the bootstrap format adding validation handling and coloring will be a snap! For more information see the javascript validation section.
+          .push
+          
+      .bs-docs-section
+        .page-header
+          h1#buttons Using Sass
+        div
+          h2#sass Custom Builds
+          p
+            | HUI is built on Bootstrap's <a href="https://github.com/twbs/bootstrap-sass">official Sass port</a>, FontAwesome and a number of custom HUI enhancements. Everything is easily customized and tweaked. Simply select the variables in any Sass file and build your own version using gruntjs. Make sure you have installed all the requirements first with 
+            code npm install
+            | . For more information see the getting started section.
+          .bs-example
+            p.lead Make sure you have NodeJS, NPM and GruntJS installed. Install all the requirements. 
+          .push
+          
+      
+  include includes/footer.jade

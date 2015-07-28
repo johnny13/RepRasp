@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RepRasp - 3D Printer Touchscreen</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="webroot/css/hui-min.css">
+    <link rel="stylesheet" href="webroot/libs/pnotify.custom.min.css">
+    <link rel="stylesheet" href="webroot/css/RepRasp.css">
+  </head>
+</html>
+<body><!--
+  <Ride>the Lighting </Ride>-->
+  <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="index.html" class="navbar-brand"><span class="fa fa-flask"></span><strong>H</strong><strong>U</strong><strong>I</strong></a>
+      </div><!--
+      <Collect>the nav links, forms, and other content for toggling </Collect>-->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li id="START"><a href="getting_started.html"><i class="fa fa-dashboard"></i> Start</a></li>
+          <li id="CSS"><a href="css.html"><i class="fa fa-magic"></i> CSS</a></li>
+          <li id="COMP"><a href="components.html"><i class="fa fa-toggle-on"></i> Components</a></li>
+          <li id="JS"><a href="javascript.html"><i class="fa fa-bug"></i> JavaScript</a></li>
+          <li class="dropdown"><a id="download" data-toggle="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-rocket"></i> Stuff<span class="caret"></span></a>
+            <ul aria-labelledby="download" class="dropdown-menu">
+              <li><a href="demos/"> <i class="fa fa-code"></i> Demos</a></li>
+              <li class="divider"></li>
+              <li><a href="./bootstrap.min.css">bootstrap.min.css</a></li>
+              <li><a href="./bootstrap.css">bootstrap.css</a></li>
+              <li class="divider"></li>
+              <li><a href="./variables.less">variables.sass</a></li>
+              <li><a href="./bootswatch.less">Gruntfile.js</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.navbar-collapse -->
+    </div><!--/.container-->
+  </nav>
+  <div class="container">
+    <div class="row"><!--
+      <Overview></Overview>-->
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <h1 id="js-overview">Javascript</h1>
+        </div>
+        <h3 id="js-individual-compiled">Individual or compiled</h3>
+        <p>Plugins can be included individually (using Jasny Bootstrap's individual<code>*.js</code>files), or all at once (using<code>hui-bootstrap.js</code>or the minified<code>hui-bootstrap.min.js</code>).</p>
+        <p>The Jasny Bootstrap plugins work with or without loading Twitter Bootstrap's<code>bootstrap.js</code>.</p>
+        <div class="bs-callout bs-callout-danger">
+          <h4>Do not attempt to include both.</h4>
+          <p>Both<code>hui-bootstrap.js</code>and<code>hui-bootstrap.min.js</code>contain all plugins in a single file.</p>
+        </div>
+        <h3 id="js-data-attrs">Data attributes</h3>
+        <p>You can use all Jasny Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using a plugin.</p>
+        <p>That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the document namespaced with<code>data-api</code>. This looks like this:
+          <pre class="jsCode">$(document).off('.data-api')</pre>
+          <p>Alternatively, to target a specific plugin, just include the plugin's name as a namespace along with the data-api namespace like this:</p>
+          <pre class="jsCode">= '$(document).off(\'.alert.data-api\')'
+</pre>
+          <h3 id="js-programmatic-api">Programmatic API</h3>
+          <p>We also believe you should be able to use all Bootstrap plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.</p>
+          <pre class="jsCode">$(&quot;.fileinput&quot;).fileinput().addClass(&quot;fat&quot;)</pre>
+          <p>All methods should accept an optional options object, a string which targets a particular method, or nothing (which initiates a plugin with default behavior):</p>
+          <pre class="jsCode">$(&quot;#myMenu&quot;).offcanvas()                      // initialized with defaults 
+$(&quot;#myMenu&quot;).offcanvas({ autohide: false })   // initialized with no autohide 
+$(&quot;#myMenu&quot;).offcanvas('show')                // initializes and invokes show immediately</pre>
+        </p>
+        <p>Each plugin also exposes its raw constructor on a<code>Constructor</code>property:<code>$.fn.popover.Offcanvas</code>. If you'd like to get a particular plugin instance, retrieve it directly from an element:<code>$('.navmenu').data('offcanvas')</code>.</p>
+        <h3 id="js-noconflict">No conflict</h3>
+        <p>Sometimes it is necessary to use Bootstrap plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call<code>.noConflict</code>on the plugin you wish to revert the value of.</p>
+        <pre class="jsCode">\nvar bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
+$.fn.bootstrapBtn = bootstrapButton            // give $().bootstrapBtn the Bootstrap functionality
+</pre>
+        <h3 id="js-events">Events</h3>
+        <p>Bootstrap provides custom events for most plugin's unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex.<code>show</code>) is triggered at the start of an event, and its past participle form (ex.<code>shown</code>) is trigger on the completion of an action.</p>
+        <p>As of 3.0.0, all Bootstrap events are namespaced.</p>
+        <p>All infinitive events provide<code>preventDefault</code>functionality. This provides the ability to stop the execution of an action before it starts.</p>
+        <pre class="jsCode">\n$('#myMenu').on('show.bs.offcanvas', function (e) {
+  if (!data) return e.preventDefault() // stops menu from being shown
+})
+</pre>
+      </div>
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <h1 id="offcanvas">DJ Ralphio<small>&nbsp;dj-ralphio-simple.js</small></h1>
+        </div>
+        <h2 id="offcanvas-examples">Example</h2>
+        <p>The DJ Ralphio Plugin allows you to easily convert any text input into a friendly up and down spinner. This is a very simple version that only depends on a single javascript function. For the full demo visit the DJ Ralphio Plugin Page.</p>
+        <div class="bs-example">
+          <p class="lead">TODO ADD THIS EXAMPLE FROM DEMO PAGE</p>
+        </div>
+        <div class="push">      </div>
+      </div>
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <h1 id="offcanvas">Off canvas<small>offcanvas.js</small></h1>
+        </div>
+        <h2 id="offcanvas-examples">Example</h2>
+        <p>The offcanvas plugin allows you to hide an element from sight and than show it by moving either that or any other element. It's intented to be used for off canvas navigation, like push menus.</p>
+        <div class="bs-example bs-navmenu-offcanvas-example">
+          <div id="myNavmenuCanvas">
+            <nav id="myNavmenu" role="navigation" style="left:100px" class="navmenu navmenu-default navmenu-fixed-left offcanvas"><a href="#" class="navmenu-brand">Brand</a>
+              <ul class="nav navmenu-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+              </ul>
+            </nav>
+            <div class="navbar navbar-default navbar-fixed-top">
+              <button type="button" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="#myNavmenuCanvas" data-placement="left" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in aliquet nisl. Praesent sed leo congue, fringilla eros eu, tempus metus. Nam mollis odio ipsum, non vehicula ipsum accumsan sodales. Morbi varius vitae elit euismod cursus. Donec a dapibus justo, in facilisis nisi. Suspendisse ut turpis dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui risus, tincidunt at odio ut, ultrices dignissim ipsum. Cras ultrices erat nec leo luctus varius. Nulla sollicitudin tincidunt nulla, ut porta mauris volutpat vitae. Suspendisse ornare dolor sit amet massa venenatis pulvinar.</p>
+          </div>
+        </div><!--/example -->
+        <pre class="htmlCode">&lt;nav id=&quot;myNavmenu&quot; class=&quot;navmenu navmenu-default navmenu-fixed-left offcanvas&quot; role=&quot;navigation&quot;&gt; 
+ &emsp;&lt;a class=&quot;navmenu-brand&quot; href=&quot;#&quot;&gt;Brand&lt;/a&gt; 
+ &emsp;&emsp;&lt;ul class=&quot;nav navmenu-nav&quot;&gt; 
+ &emsp;&emsp;&emsp;&lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt; 
+ &emsp;&emsp;&emsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt; 
+ &emsp;&emsp;&emsp;&lt;li class=&quot;dropdown&quot;&gt; 
+ &emsp;&emsp;&emsp;&emsp;&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown &lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt; 
+ &emsp;&emsp;&emsp;&emsp;&emsp;&lt;ul class=&quot;dropdown-menu navmenu-nav&quot; role=&quot;menu&quot;&gt; 
+ &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt; 
+ &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt; 
+ &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt; 
+ &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt; 
+ &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;One more separated link&lt;/a&gt;&lt;/li&gt; 
+ &emsp;&emsp;&emsp;&emsp;&emsp;&lt;/ul&gt; 
+ &emsp;&emsp;&emsp;&lt;/li&gt; 
+ &emsp;&emsp;&lt;/ul&gt; 
+ &emsp;&lt;/nav&gt;</pre>
+        <div class="bs-callout bs-callout-info">
+          <h4>Examples</h4>
+          <p>For better understanding, have a look at the<a href="../examples/navmenu/">off canvas slide in menu</a>,<a href="../examples/navmenu-push/">off canvas push menu</a>and<a href="../examples/navmenu-reveal/">off canvas reveal menu</a>exapmles.</p>
+        </div>
+        <hr class="bs-docs-separator">
+        <h2 id="offcanvas-usage">Usage</h2>
+        <p>Add<code>.offcanvas</code>to hide an element. Alternatively add<code>.offcanvas-*</code>to hide an element up to a specific viewport width. Adding the<code>.offcanvas</code>class is not required. You may also hide an element by any other means.</p>
+        <p>The effect works best for elements positioned to the top, bottom, left or right of the window, either with absolute or fixed positioning.</p>
+        <p>When shown, the plugin adds<code>.canvas-slid</code>to the element that has slid.</p>
+        <h3>Via data attributes</h3>
+        <p>Add<code>data-toggle="offcanvas"</code>and a<code>data-target</code>to control, assigning it to show and hide the target element. The<code>data-target</code>attribute accepts a CSS selector to apply the collapse to.</p>
+        <p>Optionally add a<code>data-canvas</code>attribute to slide a canvas instead of only the target element. For a push menu set<code>data-canvas="body"</code>.
+          <h3>Via JavaScript</h3>
+          <p>Call the input mask via javascript:</p>
+          <pre class="jsCode">\n$('.navmenu').offcanvas()
+</pre>
+          <h3>Options</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width: 100px;">Name</th>
+                <th style="width: 50px;">type</th>
+                <th style="width: 100px;">default</th>
+                <th>description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>canvas</td>
+                <td>string</td>
+                <td>false</td>
+                <td>If set, the canvas will be moved on show and hide instead of the target element. This creates alternative effects.</td>
+              </tr>
+              <tr>
+                <td>toggle</td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>Toggles the off canvas element on invocation</td>
+              </tr>
+              <tr>
+                <td>placement</td>
+                <td>string</td>
+                <td>'auto'</td>
+                <td>Where to position the element at the start of the animation. For example, if placement is "left", the element will slide from left to right. The default option "auto" guesses the placement based on position and dimension.</td>
+              </tr>
+              <tr>
+                <td>autohide</td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>Hide the off canvas element if clicked anywhere other that the element.</td>
+              </tr>
+              <tr>
+                <td>recalc</td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>Calculate if off canvas should be disabled for this viewport width on window resize. If your elements always gets hidden on window resize, try setting this to false.</td>
+              </tr>
+              <tr>
+                <td>disableScrolling</td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>Disable scrolling when the off canvas element is shown, by setting overflow to hidden for the body.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="bs-callout bs-callout-danger">
+            <h4>Graceful degradation</h4>
+            <p>For browsers that don't support transform (mainly IE8), the<code>target</code>option is ignored. In that case, the plugin will always slide the target element. In that case<code>.canvas-slid</code>will be added to the target element instead.</p>
+          </div>
+          <h3>Methods</h3>
+          <h4>.offcanvas(options)</h4>
+          <p>Initializes the off canvas element with an optional options.</p>
+          <h4>.offcanvas('toggle')</h4>
+          <p>Toggles an off canvas element to shown or hidden.</p>
+          <h4>.offcanvas('show')</h4>
+          <p>Shows an off canvas element.</p>
+          <h4>.offcanvas('hide')</h4>
+          <p>Hides an off canvas element.</p>
+          <h3>Events</h3>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th style="width: 150px;">Event Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>show.bs.offcanvas</td>
+                  <td>This event fires immediately when the show instance method is called.</td>
+                </tr>
+                <tr>
+                  <td>shown.bs.offcanvas</td>
+                  <td>This event is fired when the target has been made visible to the user (will wait for CSS transitions to complete).</td>
+                </tr>
+                <tr>
+                  <td>hide.bs.offcanvas</td>
+                  <td>This event is fired immediately when the hide instance method has been called.</td>
+                </tr>
+                <tr>
+                  <td>hidden.bs.offcanvas</td>
+                  <td>This event is fired when the modal has finished being hidden from the user (will wait for CSS transitions to complete).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </p>
+      </div>
+      <div class="bs-docs-section bs-jasny">
+        <div class="page-header">
+          <h1 id="rowlink">Row link<small>rowlink.js</small></h1>
+        </div>
+        <h2 id="rowlink-examples">Example</h2>
+        <p>This plugin turns a table row into a clickable link.</p>
+        <div class="bs-example">
+          <table class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody data-link="row" class="rowlink">
+              <tr>
+                <td><a href="#inputmask">Input mask</a></td>
+                <td>Input masks can be used to force the user to enter data conform a specific format.</td>
+                <td class="rowlink-skip"><a href="#">Action</a></td>
+              </tr>
+              <tr>
+                <td><a href="http://www.jasny.net/" target="_blank">jasny.net</a></td>
+                <td>Shared knowledge of Arnold Daniels aka Jasny.</td>
+                <td class="rowlink-skip"><a href="#">Action</a></td>
+              </tr>
+              <tr>
+                <td><a href="#rowlinkModal" data-toggle="modal">Launch modal</a></td>
+                <td>Toggle a modal via JavaScript by clicking this row.</td>
+                <td class="rowlink-skip"><a href="#">Action</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="rowlinkModal" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                <h4 class="modal-title">Rowlink Modal</h4>
+              </div>
+              <div class="modal-body">
+                <p>This modal proves that JavaScript events are triggered correctly by rowlink.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <pre class="htmlCode">&lt;table class=&quot;table table-striped table-bordered table-hover&quot;&gt;
+&emsp;&lt;thead&gt;
+&emsp;&emsp;&lt;tr&gt;
+&emsp;&emsp;&emsp;&lt;th&gt;Name&lt;/th&gt;
+&emsp;&emsp;&emsp;&lt;th&gt;Description&lt;/th&gt;
+&emsp;&emsp;&emsp;&lt;th&gt;Actions&lt;/th&gt;
+&emsp;&emsp;&lt;/tr&gt;
+&emsp;&lt;/thead&gt;
+&emsp;&emsp;&lt;tbody data-link=&quot;row&quot; class=&quot;rowlink&quot;&gt;
+&emsp;&emsp;&emsp;&lt;tr&gt;
+&emsp;&emsp;&emsp;&emsp;&lt;td&gt;&lt;a href=&quot;#inputmask&quot;&gt;Input mask&lt;/a&gt;&lt;/td&gt;
+&emsp;&emsp;&emsp;&emsp;&lt;td&gt;Input masks can be used to force the user to enter data conform a specific format.&lt;/td&gt;
+&emsp;&emsp;&emsp;&emsp;&lt;td class=&quot;rowlink-skip&quot;&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/td&gt;
+&emsp;&emsp;&emsp;&lt;/tr&gt;
+&emsp;&emsp;&emsp;&lt;tr&gt;
+&emsp;&emsp;&emsp;&emsp;&lt;td&gt;&lt;a href=&quot;http://www.jasny.net/&quot; target=&quot;_blank&quot;&gt;jasny.net&lt;/a&gt;&lt;/td&gt;
+&emsp;&emsp;&emsp;&emsp;&lt;td&gt;Shared knowledge of Arnold Daniels aka Jasny.&lt;/td&gt;
+&emsp;&emsp;&emsp;&emsp;&lt;td class=&quot;rowlink-skip&quot;&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/td&gt;
+&emsp;&emsp;&emsp;&lt;/tr&gt;
+&emsp;&emsp;&emsp;&lt;tr&gt;
+&emsp;&emsp;&emsp;&emsp;&lt;td&gt;&lt;a href=&quot;#rowlinkModal&quot; data-toggle=&quot;modal&quot;&gt;Launch modal&lt;/a&gt;&lt;/td&gt;
+&emsp;&emsp;&emsp;&emsp;&lt;td&gt;Toggle a modal via JavaScript by clicking this row.&lt;/td&gt;
+&emsp;&emsp;&emsp;&emsp;&lt;td class=&quot;rowlink-skip&quot;&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/td&gt;
+&emsp;&emsp;&emsp;&lt;/tr&gt;
+&emsp;&emsp;&lt;/tbody&gt;
+&emsp;&lt;/table&gt;</pre>
+        <hr class="bs-docs-separator">
+        <h2 id="rowlink-usage">Usage</h2>
+        <h3>Via data attributes</h3>
+        <p>Add class<code>.rowlink</code>and attribute<code>data-link="row"</code>to a<code><table></code>or<code><tbody></code>element. For other options append the name to<code>data-</code>, as in<code>data-target="a.mainlink"</code>A cell can be excluded by adding the<code>.rowlink-skip</code>class to the<code><td></code>.</p>
+        <h3>Via JavaScript</h3>
+        <p>Call the input mask via javascript:</p>
+        <pre class="jsCode">$('tbody.rowlink').rowlink()</pre>
+        <h3>Options</h3>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th style="width: 100px;">Name</th>
+              <th style="width: 50px;">type</th>
+              <th style="width: 100px;">default</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>target</td>
+              <td>string</td>
+              <td>'a'</td>
+              <td>A jquery selector string, to select the link element within each row.</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Methods</h3>
+        <h4>.rowlink(options)</h4>
+        <p>Makes the rows of a table or tbody clickable.</p>
+      </div><!--
+      <Input>mask</Input>-->
+      <div class="bs-docs-section bs-jasny">
+        <div class="page-header">
+          <h1 id="inputmask">Input mask<small>inputmask.js</small></h1>
+        </div>
+        <h2 id="inputmask-examples">Example</h2>
+        <p>Input masks can be used to force the user to enter data conform a specific format. Unlike validation, the user can't enter any other key than the ones specified by the mask.</p>
+        <div class="bs-example">
+          <input type="text" data-mask="999-99-999-9999-9" placeholder="ISBN" class="form-control">
+        </div>
+        <pre class="htmlCode">\n            
+</pre>
+        <hr class="bs-docs-separator">
+        <h2 id="inputmask-usage">Usage</h2>
+        <h3>Via data attributes</h3>
+        <p>Add data attributes to register an element with inputmask functionality as shown in the example above.</p>
+        <h3>Via JavaScript</h3>
+        <p>Call the input mask via javascript:</p>
+        <pre class="jsCode">$('.inputmask').inputmask({ mask: '999-99-999-9999-9' })</pre>
+        <h3>Options</h3>
+        <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to<code>data-</code>, as in<code>data-mask="999-99-999-9999-9"</code>.</p>
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width: 100px;">Name</th>
+                <th style="width: 50px;">type</th>
+                <th style="width: 100px;">default</th>
+                <th>description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>mask</td>
+                <td>string</td>
+                <td>''</td>
+                <td>A string of formatting and literal characters, defining the input mask (see below).</td>
+              </tr>
+              <tr>
+                <td>placeholder</td>
+                <td>string</td>
+                <td>'_'</td>
+                <td>The character that is displayed where something needs to be typed.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Format</h3>
+        <p>Each typed character needs to match exactly one character in the<code>mask</code>option.</p>
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Character</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>9</td>
+                <td>Number</td>
+              </tr>
+              <tr>
+                <td>a</td>
+                <td>Letter</td>
+              </tr>
+              <tr>
+                <td>?</td>
+                <td>Alphanumeric</td>
+              </tr>
+              <tr>
+                <td>*</td>
+                <td>Any character</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Methods</h3>
+        <h4>.inputmask(options)</h4>
+        <p>Initializes an input element with an input mask.</p>
+      </div>
+    </div>
+  </div>
+  <script src="webroot/libs/jquery/jquery-1.10.2.min.js"></script>
+  <script src="webroot/js/hui.min.js"></script>
+  <script src="webroot/libs/modernizr/modernizr.2.6.2.custom.js"></script>
+  <script src="webroot/libs/minimal/consolefix.js"></script>
+  <script src="webroot/libs/minimal/css-media.js"></script>
+  <script src="webroot/libs/minimal/respond.min.js"></script>
+  <script src="webroot/libs/minimal/shiv.js"></script>
+  <script src="webroot/libs/minimal/html5shiv.js"></script>
+  <script src="webroot/libs/json2.js"></script>
+  <script src="webroot/libs/pnotify.custom.min.js"></script>
+  <script src="webroot/libs/pnotify-function.js"></script>
+  <script src="webroot/js/json.js"></script>
+  <script src="webroot/js/RepRasp.js"></script>
+  <script type="text/javascript">
+    console.debug("RepRasp Started");
+    
+  </script>
+  <div id="Foots" class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="push">&nbsp;</div>
+        <p class="text-right">© 2015 huement.com</p>
+        <div class="push">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+</body>

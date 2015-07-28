@@ -1,0 +1,13 @@
+Hola!
+
+If you are interested in using Modernizr, consider checking out their website for full documentation.
+
+http://modernizr.com/
+
+
+For hui, we use a customized version. Mainly its a standard version with support for detecting HTML5 Audio elements.
+
+
+If you copy the below link into your browser, you can see all the options we use, and go about creating your own version based on that.
+
+http://modernizr.com/download/#-fontface-backgroundsize-borderimage-borderradius-boxshadow-flexbox-hsla-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-applicationcache-canvas-canvastext-draganddrop-hashchange-history-audio-video-indexeddb-input-inputtypes-localstorage-postmessage-sessionstorage-websockets-websqldatabase-webworkers-geolocation-inlinesvg-smil-svg-svgclippaths-touch-webgl-shiv-cssclasses-addtest-prefixed-teststyles-testprop-testallprops-hasevent-prefixes-domprefixes-audio_audiodata_api-audio_webaudio_api-file_api-fullscreen_api-notification-load

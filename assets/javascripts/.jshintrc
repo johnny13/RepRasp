@@ -1,0 +1,11 @@
+{
+  "undef": true,
+  "unused": false,
+  "globals": { "MY_GLOBAL": false },
+  "curly": true,
+  "strict": false,
+  "globalstrict": false,
+  "browser": true,
+  "jquery": true,
+  "laxbreak": true
+}
