@@ -85,9 +85,9 @@ module.exports = function (grunt) {
       },
       javascript: {
         src: [
-          'assets/javascripts/docready.js', // setup each page and globals
           'assets/javascripts/actions.js', // command logic
-          'assets/javascripts/print_functions.js' // page specific functions
+          'assets/javascripts/print_functions.js', // page specific functions
+          'assets/javascripts/docready.js' // setup each page and globals
         ],
         dest: 'www/webroot/js/<%= pkg.name %>.js'
       },

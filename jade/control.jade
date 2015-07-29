@@ -6,7 +6,7 @@ html
     include includes/navigate.jade
     .container-fluid
       .row
-        .col-sm-8.col-xs-7
+        .col-sm-8.col-xs-7.lil-left
           .btn-group.btn-group-justified
             a.btn.btn-default.btn-xs.col-sm-4(href='#')
               i.fa.fa-home.fa-1
@@ -52,9 +52,16 @@ html
               
             .push(style='height:10px;')
 
-            .input-group
-              input.form-control.input-sm.text-right(type='text', placeholder='5')
-              span.input-group-addon mm
+            .input-group.number-spinner
+              span.input-group-btn.data-dwn
+                button.btn.btn-info(data-dir='dwn')
+                  span.fa.fa-minus
+              input.form-control.text-center(type='text', value='5', min='5', max='100')
+              span.input-group-btn.data-up
+                button.btn.btn-info(data-dir='up')
+                  span.fa.fa-plus
+              span#basic-addon2.input-group-addon mm
+
 
             .push(style='height:10px;')
 

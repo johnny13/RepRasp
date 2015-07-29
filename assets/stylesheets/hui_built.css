@@ -78,30 +78,12 @@ body {
 .navbar-default .navbar-offcanvas .navmenu-brand {
   color: #FFFFFF; }
 
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 15px; }
-
-.btn-circle.btn-lg {
-  width: 50px;
-  height: 50px;
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 25px; }
-
-.btn-circle.btn-xl, .action-button {
+.action-button {
   width: 70px;
   height: 70px;
-  padding: 10px 16px;
+  padding: 2px;
   font-size: 24px;
-  line-height: 1.33;
-  border-radius: 35px; }
+  line-height: 1.33; }
 
 .action-button .fa {
   font-size: 44px;
@@ -110,6 +92,10 @@ body {
 
 .action-button:hover .fa {
   color: #333; }
+
+.navmenu-nav .fa {
+  margin-top: 5px;
+  margin-bottom: -2px; }
 
 @media (min-width: 992px) {
   .navbar {
@@ -123,6 +109,8 @@ body {
   .small-pf {
     padding-left: 0px;
     padding-right: 6px; }
+  .lil-left {
+    padding-left: 6px; }
   body {
     padding-top: 10px;
     padding-bottom: 20px; }
