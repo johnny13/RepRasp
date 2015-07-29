@@ -14,12 +14,13 @@
 
 case "$1" in 
     start)
-        echo "Starting reprasp! Woo Hoo!"
-        cd /home/pi/RepRasp && /usr/local/bin/grunt connect:server
+        echo "Starting RepRasp! Woo Hoo!"
+        cd /home/pi/RepRasp && /usr/local/bin/grunt connect:server > /dev/null 2>&1
         ;;
     stop)
-        echo "Stopping servoblaster"
+        echo "Stopping reprasp. Sad Face."
         killall reprasp
+        killall grunt
         ;;
     *)
         echo "Usage: /etc/init.d/servod start|stop"
