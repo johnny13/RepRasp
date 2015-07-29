@@ -1,6 +1,6 @@
 #RepRasp Repository
 
-![promo image](https://raw.githubusercontent.com/johnny13/RepRasp/master/assets/art/1.png)
+![promo image](https://raw.githubusercontent.com/johnny13/RepRasp/master/assets/art/move.png)
 
 ###WORK IN PROGRESS 
 
@@ -48,7 +48,7 @@ Then finally you can clone the RepRasp repository and get started.
   
 Once all of those commands are finished you should have a repository stuffed with a bunch of node modules. At this point you still need to manually set the server details in the **files/defaults.json** and from there on out all you need to do is serve the HTML files to a web browser.
 
-![promo image](https://raw.githubusercontent.com/johnny13/RepRasp/master/assets/art/2.png)
+![promo image](https://raw.githubusercontent.com/johnny13/RepRasp/master/assets/art/menu.png)
 
 ####Production vs Dev node modules
 
