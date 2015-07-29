@@ -68,3 +68,24 @@ these commands requires **npm install --dev** and should not be run on the raspb
     grunt reset             // resets repo and rebuilds everything
     grunt dev               // live reload. edit sass and jade and have fun
 
+
+##Debian Service & Startup
+
+The file /commands/reprasp can be used an a servcie script. If you copy that you can run like, **reprasp start** and **reprasp stop** from the command line. In order to get that working you need to run a few commands.
+
+    sudo cp /home/pi/commands/reprasp /etc/init.d
+    sudo chmod 755 /etc/init.d/reprasp
+    
+Then if you want to start / stop you can run these commands
+
+    sudo /etc/init.d/reprasp start
+    sudo /etc/init.d/reprasp stop
+    
+If you want RepRasp to run at startup every time
+
+    sudo update-rc.d reprasp defaults
+    
+If you no longer want RepRasp to run at start 
+
+    sudo update-rc.d -f reprasp remove
+    

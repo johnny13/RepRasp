@@ -1,20 +1,20 @@
 /*
-$(document).ready(function() {
-     
-}); 
+* PRINT FUNCTIONS
+*
+* this file contains all the API Interactions.
 */ 
 
 function movedirection(xamt,yamt,zamt){
+  
   var xocto_url = GlobalURL+"/api/printer/printhead";
   var dirdata = {"command": "jog", "x":xamt, "y":yamt, "z":zamt};
-  var jd = JSON.stringify(dirdata);
-  //console.debug(dirdata);
-  //console.debug(xocto_url);
+  var xjd = JSON.stringify(dirdata);
+  
   $.ajax({
       type: "post",
       url: xocto_url,
       dataType:"json",
-      data: jd,
+      data: xjd,
       contentType: "application/json",
       headers: { 'X-Api-Key': GlobalKey },
       success: function(data){
@@ -22,35 +22,39 @@ function movedirection(xamt,yamt,zamt){
       },
       error: function(data){
         console.debug(data);
+        MumfordNote("API ERROR. Command Incomplete",false,"error");
       }
   });
 }
 
-function homeaxis(dirdata){
-  var xocto_url = GlobalURL+"/api/printer/printhead";
+function homeaxis(hdata){
+  
+  var hocto_url = GlobalURL+"/api/printer/printhead";
+  var hjd = JSON.stringify(hdata);
 
-  var jd = JSON.stringify(dirdata);
-  console.debug(dirdata);
-  //console.debug(xocto_url);
   $.ajax({
       type: "post",
-      url: xocto_url,
+      url: hocto_url,
       dataType:"json",
-      data: jd,
+      data: hjd,
       contentType: "application/json",
       headers: { 'X-Api-Key': GlobalKey },
       success: function(data){
-        console.debug(data);
+        //console.debug(data);
+        //if empty all good
       },
       error: function(data){
         console.debug(data);
+        MumfordNote("API ERROR. Command Incomplete",false,"error");
       }
   });
 }
 
 function getstatus(){
+  
     var octo_url = GlobalURL+"/api/connection";
     console.debug(octo_url);
+  
     $.ajax({
         type: "GET",
         url: octo_url,

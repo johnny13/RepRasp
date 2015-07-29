@@ -1,11 +1,11 @@
 /*
-$(document).ready(function() {
-     
-}); 
-*/
+* ACTION FUNCTIONS
+*
+* this file contains all the UI Commands.
+* app functions. anything not related to the API
+*/ 
 
-/* PAGE START UP FUNCTIONS */
-/*
+/* PAGE START UP
 * each page has an id that triggers a page load function unique to that page
 * this is done so we dont need multiple document ready scripts and whatnot
 */
