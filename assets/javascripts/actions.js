@@ -10,17 +10,24 @@
 * this is done so we dont need multiple document ready scripts and whatnot
 */
 function startindex(){ 
+  $("#printer_connect").on("click",function(eve){
+    eve.preventDefault();
+    getstatus();
+  });
+  
   //console.debug("start index page");
   getstatus();
 }
 
+var controlstartlimit = 0;
 function startcontrols(){ 
+  controlstartlimit++;
   //move printhead
   xyz_clicks();
-  
+
   //selected tool amount
   mmspinner();
-  
+
   //home axis buttons
   homerow_clicks();
   

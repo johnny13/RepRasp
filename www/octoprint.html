@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RepRasp - 3D Printer Touchscreen</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('plugin.reprasp.static', filename='css/hui-min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('plugin.reprasp.static', filename='css/pnotify.custom.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('plugin.reprasp.static', filename='css/reprasp.min.css') }}">
+  </head>
+  <body>
+    <div class="navmenu navmenu-default navmenu-fixed-right offcanvas">
+      <ul class="nav navmenu-nav minset">
+        <li><a href="status.html" data-pageid="status"><i class="fa fa-th-large fa-1"></i>  LINK</a></li>
+        <li><a href="print.html" data-pageid="print"><i class="fa fa-cube fa-1"></i>  PRINT</a></li>
+        <li><a href="control.html" data-pageid="control"><i class="fa fa-arrows fa-1"></i>  MOVE</a></li>
+        <li><a href="terminal.html" data-pageid="terminal"><i class="fa fa-tasks fa-1"></i>  TERMINAL</a></li>
+        <li><a href="settings.html" data-pageid="settings"><i class="fa fa-wrench fa-1"></i>  CONFIG</a></li>
+      </ul><img src="{{ url_for('plugin.reprasp.static', filename='img/reprasp_large.png') }}" style="max-width:130px;width:100%;margin:20px auto;" class="img-responsive">
+      <p style="max-width:130px;width:100%;margin:0px auto;" class="lead footertext">© 2015 huement.com</p>
+    </div>
+    <div class="navbar navbar-fixed-top">
+      <button type="button" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body" class="navbar-toggle action-button"><img src="{{ url_for('plugin.reprasp.static', filename='img/reprasp.png') }}" style="max-width:70px;width:100%;margin:0px auto;" class="img-responsive"></button>
+    </div>
+    <div id="reprasp_main" class="container-fluid"></div>
+    <script src="{{ url_for('plugin.reprasp.static', filename='libs/jquery-2.1.4.min.js') }}"></script>
+    <script src="{{ url_for('plugin.reprasp.static', filename='js/hui.min.js') }}"></script>
+    <script src="{{ url_for('plugin.reprasp.static', filename='libs/json2.js') }}"></script>
+    <script src="{{ url_for('plugin.reprasp.static', filename='libs/pnotify.custom.min.js') }}"></script>
+    <script src="{{ url_for('plugin.reprasp.static', filename='libs/pnotify-function.js') }}"></script>
+    <script src="{{ url_for('plugin.reprasp.static', filename='libs/jstorage.min.js') }}"></script>
+    <script src="{{ url_for('plugin.reprasp.static', filename='js/reprasp-main.js') }}"></script>
+    <script type="text/javascript">
+      console.debug("RepRasp Started");
+      
+    </script>
+    <div id="Foots" class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="push">
+             
+            &nbsp;
+          </div>
+          <p class="text-right hidden-xs hidden-sm">© 2015 huement.com</p>
+          <div class="push">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

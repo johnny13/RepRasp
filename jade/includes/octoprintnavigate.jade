@@ -1,0 +1,30 @@
+.navmenu.navmenu-default.navmenu-fixed-right.offcanvas
+  ul.nav.navmenu-nav.minset
+    li
+      a(href='status.html', data-pageid="status")
+        i.fa.fa-th-large.fa-1
+        |   LINK
+    li
+      a(href='print.html', data-pageid="print")
+        i.fa.fa-cube.fa-1
+        |   PRINT
+    li
+      a(href='control.html', data-pageid="control")
+        i.fa.fa-arrows.fa-1
+        |   MOVE
+    li
+      a(href='terminal.html', data-pageid="terminal")
+        i.fa.fa-tasks.fa-1
+        |   TERMINAL
+    li
+      a(href='settings.html', data-pageid="settings")
+        i.fa.fa-wrench.fa-1
+        |   CONFIG
+
+  img.img-responsive(src='{{ url_for(\'plugin.reprasp.static\', filename=\'img/reprasp_large.png\') }}', style='max-width:130px;width:100%;margin:20px auto;')
+  p.lead.footertext(style='max-width:130px;width:100%;margin:0px auto;')
+    © 2015 huement.com
+    
+.navbar.navbar-fixed-top
+  button.navbar-toggle.action-button(type='button', data-toggle='offcanvas', data-target='.navmenu', data-canvas='body')
+    img.img-responsive(src='{{ url_for(\'plugin.reprasp.static\', filename=\'img/reprasp.png\') }}', style='max-width:70px;width:100%;margin:0px auto;')

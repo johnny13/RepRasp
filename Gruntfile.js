@@ -40,7 +40,55 @@ module.exports = function (grunt) {
           // includes files within path and its sub-directories
           {expand: true, flatten: true, src: ['assets/files/**'], dest: 'www/webroot/files', filter: 'isFile'}
         ]
+      },
+      octoprint: {
+        files: [
+          // includes files within path and its sub-directories
+          {expand: true, flatten: true, src: ['www/webroot/css/**'], dest: 'octoprint_reprasp/static/css', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['www/webroot/js/**'], dest: 'octoprint_reprasp/static/js', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['www/webroot/files/**.png'], dest: 'octoprint_reprasp/static/img', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['www/webroot/fonts/**'], dest: 'octoprint_reprasp/static/fonts', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['www/webroot/status.html'], dest: 'octoprint_reprasp/static', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['www/**.html'], dest: 'octoprint_reprasp/templates', filter: 'isFile'}
+        ]
       }
+    },
+    rename: {
+        dupit: {
+            src: 'octoprint_reprasp/templates/octoprint.html',
+            dest: 'octoprint_reprasp/templates/reprasp_ui_index.jinja2'
+        },
+
+        // Any number of targets here... 
+
+        dupitcontrol: {
+            src: 'octoprint_reprasp/templates/control.html',
+            dest: 'octoprint_reprasp/templates/reprasp_ui_control.jinja2'
+        },
+        
+        dupitstatus: {
+            src: 'octoprint_reprasp/templates/status.html',
+            dest: 'octoprint_reprasp/templates/reprasp_ui_status.jinja2'
+        },
+        
+        dupitprint: {
+            src: 'octoprint_reprasp/templates/print.html',
+            dest: 'octoprint_reprasp/templates/reprasp_ui_print.jinja2'
+        },
+        
+        dupitterminal: {
+            src: 'octoprint_reprasp/templates/terminal.html',
+            dest: 'octoprint_reprasp/templates/reprasp_ui_terminal.jinja2'
+        },
+        
+        dupitsettings: {
+            src: 'octoprint_reprasp/templates/settings.html',
+            dest: 'octoprint_reprasp/templates/reprasp_ui_settings.jinja2'
+        },
+        nf3: {
+            src: 'octoprint_reprasp/static/js/RepRasp.js',
+            dest: 'octoprint_reprasp/static/js/reprasp-main.js'
+        }
     },
     /**
      * Sass ( optional Compass )
@@ -112,7 +160,7 @@ module.exports = function (grunt) {
         },
         files: [ {
           cwd: "jade",
-          src: ["**/index.jade", "**/print.jade", "**/control.jade", "**/terminal.jade", "**/settings.jade"],
+          src: ["**/index.jade", "**/status.jade", "**/print.jade", "**/control.jade", "**/terminal.jade", "**/settings.jade", "**/octoprint.jade"],
           dest: "www",
           expand: true,
           ext: ".html",
@@ -187,6 +235,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-rename');
 	
   /**
    * Load Grunt plugins.
@@ -206,6 +255,9 @@ module.exports = function (grunt) {
 	
   //Style Sheets Only
   grunt.registerTask('style', ['sass', 'cssmin', 'concat:stylesheets']);
+  
+  //Builds for Octoprint Plugin
+  grunt.registerTask('octoprint', ['copy:octoprint', 'rename']);
   
   //Cleans out cache, resets styles sheets
   grunt.registerTask('reset', ['clean', 'copy', 'sass', 'concat', 'cssmin', 'uglify','jade']);

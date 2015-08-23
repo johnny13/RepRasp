@@ -1,0 +1,38 @@
+
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+    <div class="panel panel-default status_panel">
+      <div class="panel-heading">
+        <h4><i class="fa fa-server"></i> Machine State</h4>
+      </div>
+      <div class="panel-body">
+        <p class="lead status_lead alert"><span id="mac_state"></span></p>
+        <div class="row">
+          <div class="col-xs-6"> 
+            <label>Baudrate</label>
+            <select id="connection_baudrates" class="form-control">
+              <option value="">AUTO</option>
+              <option value="250000">250000</option>
+              <option value="230400">230400</option>
+              <option value="115200">115200</option>
+              <option value="57600">57600</option>
+              <option value="38400">38400</option>
+              <option value="19200">19200</option>
+              <option value="9600">9600</option>
+            </select>
+          </div>
+          <div class="col-xs-6">
+            <label>Port</label>
+            <select id="connection_ports" class="form-control">
+              <option value="">AUTO</option>
+              <option value="/dev/ttyACM0">/dev/ttyACM0</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <button id="printer_connect" class="btn btn-block btn-danger"><i class="fa fa-times"> </i> Disconnect</button>
+      </div>
+    </div>
+  </div>
+</div>

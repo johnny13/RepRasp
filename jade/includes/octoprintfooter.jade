@@ -1,0 +1,19 @@
+script(src='{{ url_for(\'plugin.reprasp.static\', filename=\'libs/jquery-2.1.4.min.js\') }}')
+script(src='{{ url_for(\'plugin.reprasp.static\', filename=\'js/hui.min.js\') }}')
+script(src='{{ url_for(\'plugin.reprasp.static\', filename=\'libs/json2.js\') }}')
+script(src='{{ url_for(\'plugin.reprasp.static\', filename=\'libs/pnotify.custom.min.js\') }}')
+script(src='{{ url_for(\'plugin.reprasp.static\', filename=\'libs/pnotify-function.js\') }}')
+script(src='{{ url_for(\'plugin.reprasp.static\', filename=\'libs/jstorage.min.js\') }}')
+script(src='{{ url_for(\'plugin.reprasp.static\', filename=\'js/reprasp-main.js\') }}')
+script(type='text/javascript').
+  console.debug("RepRasp Started");
+
+#Foots.container
+  div.row
+    div.col-xs-12
+      div.push 
+        &nbsp;
+      p.text-right.hidden-xs.hidden-sm
+        © 2015 huement.com
+      div.push
+        &nbsp;

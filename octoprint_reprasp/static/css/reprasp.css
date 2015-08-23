@@ -1,0 +1,134 @@
+/*! 3d Printer Touch Screen interface - v0.0.1 - 2015-07-28\n* https://www.huement.com/reprasp
+* Copyright (c) 2015 Derek Scott; License: MIT */
+ 
+/*! -- I Built This. Dont Hate. -- */
+
+
+html, body {
+  height: 100%; }
+
+body {
+  padding: 10px 0 0 0;
+  overflow-x: hidden; }
+
+.navbar-toggle {
+  float: left;
+  margin-left: 15px; }
+
+.navbar-default .navbar-toggle .icon-bar {
+  background: #999999 !important; }
+
+@media (min-width: 0) {
+  .navbar-toggle {
+    display: block;
+    /* force showing the toggle */ } }
+
+@media (min-width: 992px) {
+  body {
+    padding: 0; }
+  .navbar {
+    right: auto;
+    background: none;
+    border: none; }
+  .navbar-toggle {
+    border: 1px solid #000;
+    border-color: #333 !important; } }
+
+.fa-text-white, .navmenu-nav > li > a {
+  color: #fff !important; }
+
+.background-primary {
+  background: #008cba;
+  background-color: #008cba; }
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand {
+  color: #008cba; }
+
+.navmenu-brand {
+  color: #008cba !important; }
+
+.navmenu-brand:hover {
+  color: #1f1f1f !important; }
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-brand:hover {
+  color: #008cba; }
+
+.status_lead {
+  font-size: 23px;
+  margin: 0px auto 15px auto;
+  text-align: center;
+  padding: 10px; }
+
+.navbar-toggle {
+  padding: 0px; }
+
+.panel-heading {
+  padding: 1px 10px; }
+
+.top-spin {
+  padding-top: 5px; }
+
+.action-button {
+  position: fixed;
+  right: 10px;
+  bottom: -5px;
+  display: block;
+  z-index: 9999; }
+
+.footertext {
+  color: #fff;
+  font-size: 13px;
+  margin-top: 0px;
+  text-align: center; }
+
+.navbar-default .navbar-offcanvas .navmenu-brand {
+  color: #FFFFFF; }
+
+.action-button {
+  width: 70px;
+  height: 70px;
+  padding: 2px;
+  font-size: 24px;
+  line-height: 1.33; }
+
+.action-button .fa {
+  font-size: 44px;
+  margin-left: -1px;
+  color: #FFF; }
+
+.action-button:hover .fa {
+  color: #333; }
+
+.navmenu-nav .fa {
+  margin-top: 5px;
+  margin-bottom: -2px; }
+
+@media (min-width: 992px) {
+  .navbar {
+    padding-right: 15px; } }
+
+@media (max-width: 768px) {
+  .small-pf-r {
+    padding-right: 2px; }
+  .small-pf-l {
+    padding-left: 2px; }
+  .small-pf {
+    padding-left: 0px;
+    padding-right: 6px; }
+  .lil-left {
+    padding-left: 6px; }
+  body {
+    padding-top: 10px;
+    padding-bottom: 20px; }
+  .navbar-default .navbar-brand {
+    padding: 5px; }
+  .navbar {
+    min-height: 30px;
+    height: 30px;
+    margin-bottom: 0px; }
+  .navbar-header, .navbar-brand {
+    height: 30px; } }
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    float: right; } }

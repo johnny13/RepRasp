@@ -1,92 +1,82 @@
-doctype html
-html
-  include includes/head.jade
-  body
-    #start_page.hidden controls
-    include includes/navigate.jade
-    .container-fluid
-      .row
-        .col-sm-8.col-xs-7.lil-left
-          .btn-group.btn-group-justified
-            a.btn.btn-default.btn-xs.col-sm-4.home_x(href='#')
-              i.fa.fa-home.fa-1
+.row
+  .col-sm-8.col-xs-7.lil-left
+    .btn-group.btn-group-justified
+      a.btn.btn-default.btn-xs.col-sm-4.home_x(href='#')
+        i.fa.fa-home.fa-1
+        br
+        | X
+      a.btn.btn-default.btn-xs.col-sm-4.home_y(href='#')
+        i.fa.fa-home.fa-1
+        br
+        | Y
+      a.btn.btn-default.btn-xs.col-sm-4.home_z(href='#')
+        i.fa.fa-home.fa-1
+        br
+        | Z
+    .push(style='height:20px;')
+    .btn-group.btn-group-justified
+      a.btn.btn-success.btn-lg.col-sm-4.plus_x(href='#')
+        i.fa.fa-plus.fa-2
+      a.btn.btn-success.btn-lg.col-sm-4.plus_y(href='#')
+        i.fa.fa-plus.fa-2
+      a.btn.btn-success.btn-lg.col-sm-4.plus_z(href='#')
+        i.fa.fa-plus.fa-2
+    .btn-group.btn-group-justified
+      a.btn.btn-danger.btn-lg.col-sm-4.minus_x(href='#')
+        i.fa.fa-minus.fa-2
+      a.btn.btn-danger.btn-lg.ol-sm-4.minus_y(href='#')
+        i.fa.fa-minus.fa-2
+      a.btn.btn-danger.btn-lg.col-sm-4.minus_z(href='#')
+        i.fa.fa-minus.fa-2
+    .push(style='height:20px;')
+    .btn-group.btn-group-justified.measured_amount
+      a.btn.btn-primary.btn-xs.col-sm-3(href='#', data-amount='0.1')
+        | 0.1
+      a.btn.btn-primary.active.btn-xs.col-sm-3(href='#', data-amount='1')
+        | 1
+      a.btn.btn-primary.btn-xs.col-sm-3(href='#', data-amount='10')
+        | 10
+      a.btn.btn-primary.btn-xs.col-sm-3(href='#', data-amount='100')
+        | 100
+  .col-sm-4.col-xs-5.small-pf
+    .test
+      select#tool_select.form-control.input-sm
+        option(value='') Hotend 1
+        
+      .push(style='height:10px;')
+
+      .input-group.number-spinner
+        span.input-group-btn.data-dwn
+          button.btn.btn-info(data-dir='dwn')
+            span.fa.fa-minus
+        input.form-control.text-center(type='text', value='5', min='5', max='100')
+        span.input-group-btn.data-up
+          button.btn.btn-info(data-dir='up')
+            span.fa.fa-plus
+        span#basic-addon2.input-group-addon mm
+
+
+      .push(style='height:10px;')
+
+      a.btn.btn-default.btn-sm.btn-block(href='#')
+        i.fa.fa-filter
+        |  Extrude
+                
+    .row.small-nopad(style="margin-top:20px")
+      .col-xs-8.small-pf-r
+        .btn-group.btn-group-justified(role='group', aria-label='...')
+          .btn-group(role='group', aria-label='...')
+            button.btn.btn-default.btn-xs(type='button')
+              i.fa.fa-gears
               br
-              | X
-            a.btn.btn-default.btn-xs.col-sm-4.home_y(href='#')
-              i.fa.fa-home.fa-1
+              |    On
+          .btn-group(role='group', aria-label='...')
+            button.btn.btn-default.btn-xs(type='button')
+              i.fa.fa-gears
               br
-              | Y
-            a.btn.btn-default.btn-xs.col-sm-4.home_z(href='#')
-              i.fa.fa-home.fa-1
-              br
-              | Z
-          .push(style='height:20px;')
-          .btn-group.btn-group-justified
-            a.btn.btn-success.btn-lg.col-sm-4.plus_x(href='#')
-              i.fa.fa-plus.fa-2
-            a.btn.btn-success.btn-lg.col-sm-4.plus_y(href='#')
-              i.fa.fa-plus.fa-2
-            a.btn.btn-success.btn-lg.col-sm-4.plus_z(href='#')
-              i.fa.fa-plus.fa-2
-          .btn-group.btn-group-justified
-            a.btn.btn-danger.btn-lg.col-sm-4.minus_x(href='#')
-              i.fa.fa-minus.fa-2
-            a.btn.btn-danger.btn-lg.ol-sm-4.minus_y(href='#')
-              i.fa.fa-minus.fa-2
-            a.btn.btn-danger.btn-lg.col-sm-4.minus_z(href='#')
-              i.fa.fa-minus.fa-2
-          .push(style='height:20px;')
-          .btn-group.btn-group-justified.measured_amount
-            a.btn.btn-primary.btn-xs.col-sm-3(href='#', data-amount='0.1')
-              | 0.1
-            a.btn.btn-primary.active.btn-xs.col-sm-3(href='#', data-amount='1')
-              | 1
-            a.btn.btn-primary.btn-xs.col-sm-3(href='#', data-amount='10')
-              | 10
-            a.btn.btn-primary.btn-xs.col-sm-3(href='#', data-amount='100')
-              | 100
-        .col-sm-4.col-xs-5.small-pf
-          .test
-            select#tool_select.form-control.input-sm
-              option(value='') Hotend 1
-              
-            .push(style='height:10px;')
-
-            .input-group.number-spinner
-              span.input-group-btn.data-dwn
-                button.btn.btn-info(data-dir='dwn')
-                  span.fa.fa-minus
-              input.form-control.text-center(type='text', value='5', min='5', max='100')
-              span.input-group-btn.data-up
-                button.btn.btn-info(data-dir='up')
-                  span.fa.fa-plus
-              span#basic-addon2.input-group-addon mm
-
-
-            .push(style='height:10px;')
-
-            a.btn.btn-default.btn-sm.btn-block(href='#')
-              i.fa.fa-filter
-              |  Extrude
-                      
-          .row.small-nopad(style="margin-top:20px")
-            .col-xs-8.small-pf-r
-              .btn-group.btn-group-justified(role='group', aria-label='...')
-                .btn-group(role='group', aria-label='...')
-                  button.btn.btn-default.btn-xs(type='button')
-                    i.fa.fa-gears
-                    br
-                    |    On
-                .btn-group(role='group', aria-label='...')
-                  button.btn.btn-default.btn-xs(type='button')
-                    i.fa.fa-gears
-                    br
-                    |    Off
-            .col-xs-4.small-pf-l
-              button.btn.btn-default.btn-block.btn-xs(type='button')
-                  i.fa.fa-spinner
-                  br
-                  | Fan
-              
-    
-    include includes/footer.jade 
+              |    Off
+      .col-xs-4.small-pf-l
+        button.btn.btn-default.btn-block.btn-xs(type='button')
+            i.fa.fa-spinner
+            br
+            | Fan

@@ -2,40 +2,7 @@ doctype html
 html
   include includes/head.jade
   body
-    #start_page.hidden index
     include includes/navigate.jade
-    .container-fluid
-      .row
-        .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
-          .panel.panel-default.status_panel
-            .panel-heading
-              h4
-                i.fa.fa-server
-                |  Machine State
-            .panel-body
-              p.lead.status_lead.alert
-                span#mac_state
-              .row
-                .col-xs-6 
-                  label Baudrate
-                  select#connection_baudrates.form-control
-                    option(value='') AUTO
-                    option(value='250000') 250000
-                    option(value='230400') 230400
-                    option(value='115200') 115200
-                    option(value='57600') 57600
-                    option(value='38400') 38400
-                    option(value='19200') 19200
-                    option(value='9600') 9600
-                .col-xs-6
-                  label Port
-                  select#connection_ports.form-control
-                    option(value='') AUTO
-                    option(value='/dev/ttyACM0') /dev/ttyACM0
-            .panel-footer
-              button#printer_connect.btn.btn-block.btn-danger
-                i.fa.fa-times
-                |  Disconnect
-
-    //include includes/index.html
+    #reprasp_main.container-fluid
+      
     include includes/footer.jade 
